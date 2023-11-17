@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="display1">72dp</dimen>
+    <dimen name="display2">64dp</dimen>
+    <dimen name="heading1">36dp</dimen>
+    <dimen name="heading2">32dp</dimen>
+    <dimen name="heading3">24dp</dimen>
+    <dimen name="heading4">16dp</dimen>
+    <dimen name="heading5">14dp</dimen>
+    <dimen name="subheading">18dp</dimen>
+    <dimen name="body1">16dp</dimen>
+    <dimen name="body2">14dp</dimen>
+    <dimen name="body3">12dp</dimen>
+    <dimen name="caption">10dp</dimen>
+</resources>

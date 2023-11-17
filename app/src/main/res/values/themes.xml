@@ -1,9 +1,16 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Recipeinmobile" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    <style name="Base.Theme.RecipeInMobile" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/primary50</item>
+        <item name="colorPrimaryVariant">@color/primary70</item>
+        <item name="colorSecondary">@color/secondary50</item>
+        <item name="colorSecondaryVariant">@color/secondary70</item>
     </style>
 
-    <style name="Theme.Recipeinmobile" parent="Base.Theme.Recipeinmobile" />
+    <style name="Theme.RecipeInMobile" parent="Base.Theme.RecipeInMobile" />
+
+    <style name="Theme.RecipeInMobile.Splashscreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/primary50</item>
+        <item name="windowSplashScreenAnimatedIcon">@mipmap/ic_launcher</item>
+        <item name="postSplashScreenTheme">@style/Theme.RecipeInMobile</item>
+    </style>
 </resources>
