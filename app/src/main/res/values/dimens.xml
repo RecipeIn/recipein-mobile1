@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="display1">72dp</dimen>
-    <dimen name="display2">64dp</dimen>
-    <dimen name="heading1">36dp</dimen>
-    <dimen name="heading2">32dp</dimen>
-    <dimen name="heading3">24dp</dimen>
-    <dimen name="heading4">16dp</dimen>
-    <dimen name="heading5">14dp</dimen>
-    <dimen name="subheading">18dp</dimen>
-    <dimen name="body1">16dp</dimen>
-    <dimen name="body2">14dp</dimen>
-    <dimen name="body3">12dp</dimen>
-    <dimen name="caption">10dp</dimen>
+    <dimen name="display1">72sp</dimen>
+    <dimen name="display2">64sp</dimen>
+    <dimen name="heading1">36sp</dimen>
+    <dimen name="heading2">32sp</dimen>
+    <dimen name="heading3">24sp</dimen>
+    <dimen name="heading4">16sp</dimen>
+    <dimen name="heading5">14sp</dimen>
+    <dimen name="subheading">18sp</dimen>
+    <dimen name="body1">16sp</dimen>
+    <dimen name="body2">14sp</dimen>
+    <dimen name="body3">12sp</dimen>
+    <dimen name="caption">10sp</dimen>
 </resources>

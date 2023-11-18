@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">RecipeIn</string>
+    <string name="todo">Todo</string>
+    <string name="daftar">Daftar</string>
+    <string name="signup_desc">Silahkan masukan informasi anda</string>
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="accept_terms_and_conditions">Saya menerima syarat-syarat dan ketentuan.</string>
+    <string name="sudah_punya_akun">Sudah Punya Akun?</string>
+    <string name="masuk">Masuk</string>
 </resources>
