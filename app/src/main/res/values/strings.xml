@@ -11,6 +11,9 @@
     <string name="sign_in_with_google">Sign in with google</string>
     <string name="tidak_punya_akun">Tidak punya akun?</string>
     <string name="daftar">Daftar</string>
+    <string name="verifikasi">Verifikasi</string>
+    <string name="repeat_verif">Kirim ulang kode verifikasi?</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="signup_desc">Silahkan masukan informasi anda</string>
     <string name="username">Username</string>
     <string name="confirm_password">Confirm password</string>
@@ -19,6 +22,8 @@
     <string name="ganti_password">Ganti Password</string>
     <string name="masukan_email_untuk_mengganti_password">Masukan email untuk mengganti password</string>
     <string name="kirim">Kirim</string>
+    <string name="verif_desc">Silahkan masukkan kode verifikasi yang sudah dikirimkan ke johndoe@email.com</string>
+    <string name="verif_code">Verifikasi code</string>
     <string name="ayo_masak_jangan_malas_sebagai_kebutuhan_sehari_hari_kamu">Ayo masak jangan malas sebagai kebutuhan sehari-hari kamu!</string>
     <string name="lanjut_sebagai_tamu">Lanjut sebagai tamu</string>
 </resources>
