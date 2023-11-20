@@ -67,6 +67,10 @@ dependencies {
     implementation("androidx.navigation:navigation-fragment-ktx:2.6.0")
     implementation("androidx.navigation:navigation-ui-ktx:2.6.0")
 
+    //Datastore
+    implementation("androidx.datastore:datastore-core:1.0.0")
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+
     //Room
     kapt("androidx.room:room-compiler:2.5.1")
     implementation("androidx.room:room-runtime:2.5.1")
