@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">RecipeIn</string>
     <string name="todo">TODO</string>
+    <string name="ganti_password">Ganti Password</string>
+    <string name="masukan_email_untuk_mengganti_password">Masukan email untuk mengganti password</string>
+    <string name="email">Email</string>
+    <string name="kirim">Kirim</string>
     <string name="ayo_masak_jangan_malas_sebagai_kebutuhan_sehari_hari_kamu">Ayo masak jangan malas sebagai kebutuhan sehari-hari kamu!</string>
     <string name="masuk">Masuk</string>
     <string name="lanjut_sebagai_tamu">Lanjut sebagai tamu</string>
