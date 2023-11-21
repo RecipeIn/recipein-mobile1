@@ -117,6 +117,7 @@
                 android:fontFamily="@font/nunito_regular"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/remember_me"
                 android:textSize="@dimen/body1"
                 app:layout_constraintStart_toStartOf="@id/etPasswordLayout"
