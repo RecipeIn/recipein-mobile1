@@ -1,4 +1,4 @@
-package com.lans.recipein_mobile.presentation.signup
+package com.lans.recipein_mobile.presentation.home
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,6 +8,12 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SignUpViewModel @Inject constructor(
-): ViewModel() {
+class HomeViewModel @Inject constructor(
+    private val signOutUseCase: SignOutUseCase
+) : ViewModel() {
+    fun signOut() {
+        viewModelScope.launch {
+            signOutUseCase.invoke()
+        }
+    }
 }
