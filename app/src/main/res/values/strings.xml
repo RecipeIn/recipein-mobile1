@@ -28,4 +28,5 @@
     <string name="lanjut_sebagai_tamu">Lanjut sebagai tamu</string>
     <string name="newpass_desc">Masukkan password baru anda</string>
     <string name="masukkan_kata_sandi_baru">Masukkan kata sandi baru</string>
+    <string name="logout">Logout</string>
 </resources>
