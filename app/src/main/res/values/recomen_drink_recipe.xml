@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="title_recipe_drink">
+        <item>Smoothie Kiwi</item>
+        <item>Kopi Frappe Coklat</item>
+        <item>Coklat Panas</item>
+        <item>Teh Peach</item>
+    </string-array>
+
+    <string-array name="category_drink">
+        <item>Smoothie</item>
+        <item>Kopi</item>
+        <item>Kopi</item>
+        <item>Es Teh</item>
+    </string-array>
+
+    <string-array name="author_drink">
+        <item>Dapur Sasa</item>
+        <item>Daniel</item>
+        <item>Natasha</item>
+        <item>Ernawati</item>
+    </string-array>
+
+    <string-array name="time_drink">
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+    </string-array>
+</resources>
