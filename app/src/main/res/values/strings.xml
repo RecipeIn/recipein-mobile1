@@ -48,4 +48,12 @@
     <string name="by_ahsa">by Ahsa</string>
     <string name="resep_terbaru">Resep Terbaru</string>
     <string name="lebih_banyak">Lebih Banyak</string>
+    <string name="search">Search</string>
+    <string name="advanced_search">Advanced Search</string>
+    <string name="category">Category</string>
+    <string name="recipe_name">Recipe Name</string>
+    <string name="description">Description</string>
+    <string name="by">By</string>
+    <string name="name">Name</string>
+    <string name="_30_menit">30 Menit</string>
 </resources>
