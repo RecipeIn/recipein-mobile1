@@ -29,6 +29,18 @@
     <string name="newpass_desc">Masukkan password baru anda</string>
     <string name="masukkan_kata_sandi_baru">Masukkan kata sandi baru</string>
     <string name="logout">Logout</string>
+    <string name="more">More</string>
+    <string name="settings">Settings</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="akun">Akun</string>
+    <string name="notifikasi">Notifikasi</string>
+    <string name="bahasa">Bahasa</string>
+    <string name="tentang_kami">Tentang Kami</string>
+    <string name="ketentuan_layanan">Ketentuan Layanan</string>
+    <string name="kebijakan_privasi">Kebijakan Privasi</string>
+    <string name="kontak">Kontak</string>
+    <string name="faq">FAQ</string>
+    <string name="keluar">Keluar</string>
     <string name="home">Home</string>
     <string name="recipe">Recipe</string>
     <string name="favorite">Favorite</string>
@@ -41,7 +53,6 @@
     <string name="rekomendasi_makanan_mingguan">Rekomendasi Makanan Mingguan</string>
     <string name="recipe_title">Recipe Title</string>
     <string name="by_author">by Author</string>
-    <string name="_30_menit">30 Menit</string>
     <string name="rekomendasi_minuman_mingguan">Rekomendasi Minuman Mingguan</string>
     <string name="kumpulan_resep_salad_segar">Kumpulan Resep Salad Segar</string>
     <string name="buat_kalian_yang_lagi_ingin_diet">Buat Kalian yang lagi ingin diet.</string>
