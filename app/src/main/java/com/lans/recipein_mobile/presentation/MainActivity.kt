@@ -11,8 +11,13 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.ActivityMainBinding
+import com.lans.recipein_mobile.presentation.favorite.FavoriteFragment
+import com.lans.recipein_mobile.presentation.home.HomeFragment
+import com.lans.recipein_mobile.presentation.profile.ProfileFragment
+import com.lans.recipein_mobile.presentation.recipe.RecipeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -42,6 +47,48 @@ class MainActivity : AppCompatActivity() {
                     navGraph.setStartDestination(R.id.getStartedFragment)
                 }
                 controller.graph = navGraph
+            }
+        }
+
+        setupBottomNavigation()
+    }
+
+    private fun setupBottomNavigation() {
+        binding.navigation.setOnItemSelectedListener {
+            when (it.itemId) {
+                R.id.nav_home -> {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.navHost, HomeFragment(), null)
+                        .commit()
+                    true
+                }
+
+                R.id.nav_recipe -> {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.navHost, RecipeFragment(), null)
+                        .commit()
+                    true
+                }
+
+                R.id.nav_favorite -> {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.navHost, FavoriteFragment(), null)
+                        .commit()
+                    true
+                }
+
+                R.id.nav_profile -> {
+                    supportFragmentManager
+                        .beginTransaction()
+                        .replace(R.id.navHost, ProfileFragment(), null)
+                        .commit()
+                    true
+                }
+
+                else -> false
             }
         }
     }
