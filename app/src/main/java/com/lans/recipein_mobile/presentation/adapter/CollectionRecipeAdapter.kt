@@ -1,4 +1,4 @@
-package com.lans.recipein_mobile.adapter
+package com.lans.recipein_mobile.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -13,7 +13,7 @@ class CollectionRecipeAdapter(private val list: List<CollectionRecipe>): Recycle
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = ItemRecipeCollectionBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return CollectionRecipeAdapter.ViewHolder(binding)
+        return ViewHolder(binding)
     }
 
     override fun getItemCount(): Int {

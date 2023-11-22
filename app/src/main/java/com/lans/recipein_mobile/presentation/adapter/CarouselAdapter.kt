@@ -1,4 +1,4 @@
-package com.lans.recipein_mobile.adapter
+package com.lans.recipein_mobile.presentation.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

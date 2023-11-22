@@ -15,10 +15,10 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.lans.recipein_mobile.R
-import com.lans.recipein_mobile.adapter.CarouselAdapter
-import com.lans.recipein_mobile.adapter.CategoryAdapter
-import com.lans.recipein_mobile.adapter.CollectionRecipeAdapter
-import com.lans.recipein_mobile.adapter.RecomendationRecipeAdapter
+import com.lans.recipein_mobile.presentation.adapter.CarouselAdapter
+import com.lans.recipein_mobile.presentation.adapter.CategoryAdapter
+import com.lans.recipein_mobile.presentation.adapter.CollectionRecipeAdapter
+import com.lans.recipein_mobile.presentation.adapter.RecomendationRecipeAdapter
 import com.lans.recipein_mobile.databinding.FragmentHomeBinding
 import com.lans.recipein_mobile.domain.model.Carousel
 import com.lans.recipein_mobile.domain.model.Category
