@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    tools:ignore="TextSizeCheck">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivRecipe"
+            android:layout_width="150dp"
+            android:layout_height="0dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            android:src="@drawable/img_background1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_percent="0.4"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/category"
+            android:textColor="@color/secondary50"
+            android:textSize="@dimen/body3"
+            app:layout_constraintBottom_toTopOf="@id/tvRecipeName"
+            app:layout_constraintStart_toEndOf="@id/ivRecipe"
+            app:layout_constraintTop_toTopOf="@id/ivRecipe" />
+
+        <ImageView
+            android:id="@+id/ivOption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_burger_button"
+            app:layout_constraintEnd_toEndOf="@+id/appCompatRatingBar"
+            app:layout_constraintTop_toTopOf="@id/tvCategory"
+            app:tint="@color/neutral90" />
+
+        <TextView
+            android:id="@+id/tvRecipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/recipe_name"
+            android:textSize="@dimen/heading4"
+            app:layout_constraintStart_toStartOf="@id/tvCategory"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory" />
+
+        <TextView
+            android:id="@+id/tvRecipeNameDesc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/nunito_regular"
+            android:maxWidth="200dp"
+            android:maxLength="50"
+            android:maxLines="2"
+            android:text="@string/description"
+            android:textSize="@dimen/body2"
+            app:layout_constraintStart_toStartOf="@id/tvRecipeName"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeName" />
+
+        <TextView
+            android:id="@+id/tvBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/by"
+            android:textSize="@dimen/body2"
+            app:layout_constraintEnd_toStartOf="@id/tvName"
+            app:layout_constraintStart_toStartOf="@id/tvRecipeName"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeNameDesc" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/name"
+            android:textSize="@dimen/body2"
+            app:layout_constraintBottom_toBottomOf="@id/tvBy"
+            app:layout_constraintStart_toEndOf="@id/tvBy"
+            app:layout_constraintTop_toTopOf="@id/tvBy" />
+
+        <TextView
+            android:id="@+id/tvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:drawablePadding="4dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/_30_menit"
+            android:textSize="@dimen/body2"
+            app:drawableLeftCompat="@drawable/ic_mini_clock"
+            app:layout_constraintStart_toStartOf="@id/tvBy"
+            app:layout_constraintTop_toBottomOf="@id/tvBy" />
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/ratingRecipe"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:numStars="5"
+            android:progressTint="@color/primary50"
+            android:rating="4.5"
+            android:stepSize="0.5"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
