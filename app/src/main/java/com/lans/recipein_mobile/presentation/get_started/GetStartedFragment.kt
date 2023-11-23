@@ -19,7 +19,7 @@ class GetStartedFragment : Fragment(), OnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentGetStartedBinding.inflate(layoutInflater)
         return binding.root
@@ -38,7 +38,8 @@ class GetStartedFragment : Fragment(), OnClickListener {
             }
 
             R.id.btnContinueGuest -> {
-
+                val action = GetStartedFragmentDirections.actionGetStartedFragmentToHomeFragment()
+                findNavController().navigate(action)
             }
         }
     }

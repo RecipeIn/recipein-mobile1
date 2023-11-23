@@ -76,8 +76,7 @@ class SignInFragment : Fragment(), OnClickListener {
         viewModel.state.collect { result ->
             if (result.user != null) {
                 viewModel.storeCustomerId(result.user!!.id)
-                val action =
-                    SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+                val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
                 findNavController().navigate(action)
             }
 
