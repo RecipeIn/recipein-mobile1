@@ -52,7 +52,7 @@
         android:text="@string/nama"
         android:textSize="@dimen/heading3"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvprofile" />
 
@@ -60,29 +60,27 @@
         android:id="@+id/btnEdit_Setting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
         android:backgroundTintMode="screen"
         android:src="@drawable/ic_edit_profile"
-        app:layout_constraintBottom_toTopOf="@+id/tvprofile_desc"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.079"
-        app:layout_constraintStart_toEndOf="@+id/tvUsername" />
+        app:layout_constraintHorizontal_bias="0.043"
+        app:layout_constraintStart_toEndOf="@+id/tvUsername"
+        tools:layout_editor_absoluteY="214dp" />
 
-    <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/tvprofile_desc"
-        android:layout_width="match_parent"
-        android:layout_height="111dp"
+    <View
+        android:id="@+id/viewtop"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
         android:layout_marginTop="12dp"
+        android:background="@color/primary50"
         app:layout_constraintTop_toBottomOf="@+id/tvUsername"
-        app:strokeColor="@color/primary50"
-        app:strokeWidth="4dp"
         tools:layout_editor_absoluteX="0dp" />
 
     <TextView
         android:id="@+id/tvProfileDesc"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="@font/nunito_regular"
         android:text="@string/profile_desc"
         android:textAlignment="center"
@@ -90,14 +88,23 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvprofile_desc" />
+        app:layout_constraintTop_toBottomOf="@+id/viewtop" />
+
+    <View
+        android:id="@+id/viewbuttom"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:layout_marginTop="8dp"
+        android:background="@color/primary50"
+        app:layout_constraintTop_toBottomOf="@+id/tvProfileDesc"
+        tools:layout_editor_absoluteX="0dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnResepku"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="24dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:backgroundTint="@color/primary10"
         android:fontFamily="@font/nunito_bold"
         android:paddingVertical="12dp"
@@ -106,7 +113,7 @@
         android:textColor="@color/neutral90"
         android:textSize="@dimen/subheading"
         app:cornerRadius="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tvprofile_desc"
+        app:layout_constraintTop_toBottomOf="@+id/viewbuttom"
         tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck"
         tools:layout_editor_absoluteX="24dp" />
 
@@ -117,7 +124,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/ic_next_bbutton"
         app:layout_constraintEnd_toEndOf="@+id/btnResepku"
-        tools:layout_editor_absoluteY="404dp" />
+        tools:layout_editor_absoluteY="386dp" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btnNutrisiku"
@@ -145,7 +152,7 @@
         android:layout_marginEnd="16dp"
         android:background="@drawable/ic_next_bbutton"
         app:layout_constraintEnd_toEndOf="@+id/btnNutrisiku"
-        tools:layout_editor_absoluteY="466dp" />
+        tools:layout_editor_absoluteY="449dp" />
 
     <TextView
         android:id="@+id/tvnutrisiHarian"
