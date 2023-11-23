@@ -49,4 +49,9 @@
     <string name="lemak">Lemak</string>
     <string name="protein">Protein</string>
     <string name="vitamin">Vitamin</string>
+    <string name="firstname">Nama Depan</string>
+    <string name="lastname">Nama Belakang</string>
+    <string name="tglLahir">Tanggal Lahir</string>
+    <string name="desc">Deskripsi</string>
+    <string name="simpan_perubahan">Simpan Perubahan</string>
 </resources>
