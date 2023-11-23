@@ -11,7 +11,6 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.ActivityMainBinding
 import com.lans.recipein_mobile.presentation.favorite.FavoriteFragment
@@ -33,10 +32,16 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        hideBottomNavigation()
 
+        setupProgressBar()
+        setupNavController()
+        setupBottomNavigation()
+    }
+
+    private fun setupNavController() {
         controller =
             (supportFragmentManager.findFragmentById(binding.navHost.id) as NavHostFragment).navController
-        progressBar = binding.progressBar
 
         lifecycleScope.launch {
             viewModel.session.collect { session ->
@@ -50,11 +55,19 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        setupBottomNavigation()
+        controller.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> {
+                    showBottomNavigation()
+                }
+
+                else -> hideBottomNavigation()
+            }
+        }
     }
 
     private fun setupBottomNavigation() {
-        binding.navigation.setOnItemSelectedListener {
+        binding.bottomNavigation.setOnItemSelectedListener {
             when (it.itemId) {
                 R.id.nav_home -> {
                     supportFragmentManager
@@ -91,6 +104,18 @@ class MainActivity : AppCompatActivity() {
                 else -> false
             }
         }
+    }
+
+    private fun setupProgressBar() {
+        progressBar = binding.progressBar
+    }
+
+    private fun showBottomNavigation() {
+        binding.bottomNavigation.visibility = View.VISIBLE
+    }
+
+    private fun hideBottomNavigation() {
+        binding.bottomNavigation.visibility = View.GONE
     }
 
     fun showLoading(isLoading: Boolean) {

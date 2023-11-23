@@ -64,4 +64,24 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
     </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.lans.recipein_mobile.presentation.favorite.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.lans.recipein_mobile.presentation.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/recipeFragment"
+        android:name="com.lans.recipein_mobile.presentation.recipe.RecipeFragment"
+        android:label="fragment_recipe"
+        tools:layout="@layout/fragment_recipe" />
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.lans.recipein_mobile.presentation.setting.SettingFragment"
+        android:label="fragment_setting"
+        tools:layout="@layout/fragment_setting" />
 </navigation>

@@ -54,6 +54,6 @@
     <string name="recipe_name">Recipe Name</string>
     <string name="description">Description</string>
     <string name="by">By</string>
-    <string name="name">Name</string>
-    <string name="_30_menit">30 Menit</string>
+    <string name="name">Name</string>\
+    <string name="koleksi_resep">Koleksi Resep</string>
 </resources>
