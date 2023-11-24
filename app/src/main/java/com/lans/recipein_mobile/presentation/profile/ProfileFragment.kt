@@ -14,7 +14,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProfileFragment : Fragment(), OnClickListener {
     private lateinit var binding: FragmentProfileBinding
-
+  
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -22,7 +22,7 @@ class ProfileFragment : Fragment(), OnClickListener {
         binding = FragmentProfileBinding.inflate(layoutInflater)
         return binding.root
     }
-
+    
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initializeComponent()

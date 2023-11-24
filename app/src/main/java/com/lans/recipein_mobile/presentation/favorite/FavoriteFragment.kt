@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lans.recipein_mobile.R
-import com.lans.recipein_mobile.databinding.FragmentChangePasswordBinding
 import com.lans.recipein_mobile.databinding.FragmentFavoriteBinding
+import com.lans.recipein_mobile.presentation.adapter.FavoritePagerAdapter
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class FavoriteFragment : Fragment() {
     private lateinit var binding: FragmentFavoriteBinding
 
@@ -18,5 +20,17 @@ class FavoriteFragment : Fragment() {
     ): View {
         binding = FragmentFavoriteBinding.inflate(layoutInflater)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupTabLayout()
+    }
+
+    private fun setupTabLayout() {
+        binding.viewPager.adapter = FavoritePagerAdapter(childFragmentManager,2)
+        binding.viewPager.offscreenPageLimit = 2
+        binding.tabs.setupWithViewPager(binding.viewPager)
     }
 }
