@@ -2,72 +2,78 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/Widget.Material3.CardView.Elevated"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/white"
     android:clickable="true"
     android:focusable="true"
-    app:cardCornerRadius="11dp"
-    app:strokeColor="#E0E0E0"
-    app:strokeWidth="0dp">
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_img"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
+        <ImageView
+            android:id="@+id/imgCollectionRecipe"
+            android:layout_width="150dp"
+            android:layout_height="168dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imgCollectionRecipe"
-                android:layout_width="155dp"
-                android:layout_height="198dp"
-                android:scaleType="centerCrop"
-                tools:srcCompat="@tools:sample/avatars" />
-        </androidx.cardview.widget.CardView>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
-            android:id="@+id/tvTittleCollection"
+            android:id="@+id/tvTitleCollection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_bold"
             android:maxLines="2"
             android:text="@string/kumpulan_resep_salad_segar"
-            android:textSize="@dimen/heading4"
+            android:textSize="@dimen/subheading"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/card_img"
+            app:layout_constraintStart_toEndOf="@id/imgCollectionRecipe"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvDescriptionCollection"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/buat_kalian_yang_lagi_ingin_diet"
-            android:textSize="@dimen/body3"
-            app:layout_constraintStart_toStartOf="@+id/tvTittleCollection"
-            app:layout_constraintTop_toBottomOf="@+id/tvTittleCollection" />
+            android:textSize="@dimen/body2"
+            app:layout_constraintStart_toStartOf="@id/tvTitleCollection"
+            app:layout_constraintTop_toBottomOf="@id/tvTitleCollection" />
+
+        <TextView
+            android:id="@+id/tvBy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/by"
+            android:textSize="@dimen/body2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvAuthorCollection"
+            app:layout_constraintStart_toStartOf="@id/tvDescriptionCollection" />
 
         <TextView
             android:id="@+id/tvAuthorCollection"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginStart="4dp"
             android:fontFamily="@font/nunito_bold"
-            android:text="@string/by_ahsa"
-            android:textSize="@dimen/heading4"
-            app:layout_constraintStart_toStartOf="@+id/tvDescriptionCollection"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionCollection" />
-
+            android:text="@string/name"
+            android:textSize="@dimen/body2"
+            app:layout_constraintBottom_toBottomOf="@id/tvBy"
+            app:layout_constraintStart_toEndOf="@id/tvBy"
+            app:layout_constraintTop_toTopOf="@id/tvBy" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </com.google.android.material.card.MaterialCardView>

@@ -2,11 +2,11 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/product_item"
+    android:id="@+id/productItem"
     android:layout_width="90dp"
-    app:strokeWidth="0dp"
+    android:layout_height="wrap_content"
     android:backgroundTint="@color/white"
-    android:layout_height="wrap_content">
+    app:strokeWidth="0dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -14,7 +14,7 @@
         android:backgroundTint="@color/primary50">
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/card_img"
+            android:id="@+id/cardImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -27,7 +27,8 @@
                 android:id="@+id/imgCategory"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:padding="13dp"
+                android:contentDescription="@string/todo"
+                android:padding="12dp"
                 tools:srcCompat="@tools:sample/avatars" />
         </androidx.cardview.widget.CardView>
 
@@ -35,14 +36,15 @@
             android:id="@+id/tvCategory"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito_bold"
             android:text="@string/category_title"
-            android:textSize="12sp"
-            android:textStyle="bold"
             android:textAlignment="center"
+            android:textSize="@dimen/body3"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/card_img" />
+            app:layout_constraintTop_toBottomOf="@+id/cardImage" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".presentation.setting.SettingFragment">
 
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/tvSettings"
+        app:layout_constraintStart_toStartOf="@id/tvAccountSetting"
+        app:layout_constraintTop_toTopOf="@id/tvSettings" />
+
     <TextView
         android:id="@+id/tvSettings"
         android:layout_width="wrap_content"

@@ -30,15 +30,15 @@
     </RelativeLayout>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/navigation"
+        android:id="@+id/bottomNavigation"
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:background="@color/primary50"
         app:itemActiveIndicatorStyle="@null"
+        app:itemIconTint="@drawable/icon_tint_selector"
+        app:itemTextColor="@drawable/icon_tint_selector"
         app:labelVisibilityMode="labeled"
         app:layout_constraintBottom_toBottomOf="@+id/navHost"
-        app:menu="@menu/menu_navigation"
-        app:itemIconTint="@drawable/icon_tint_selector"
-        app:itemTextColor="@drawable/icon_tint_selector" />
+        app:menu="@menu/menu_navigation" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

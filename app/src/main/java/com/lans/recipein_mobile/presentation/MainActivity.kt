@@ -11,13 +11,9 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.navigation.ui.setupWithNavController
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.ActivityMainBinding
-import com.lans.recipein_mobile.presentation.favorite.FavoriteFragment
-import com.lans.recipein_mobile.presentation.home.HomeFragment
-import com.lans.recipein_mobile.presentation.profile.ProfileFragment
-import com.lans.recipein_mobile.presentation.recipe.RecipeFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -32,65 +28,66 @@ class MainActivity : AppCompatActivity() {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
+        hideBottomNavigation()
         setContentView(binding.root)
 
+        setupProgressBar()
+        setupNavController()
+        setupBottomNavigation()
+    }
+
+    private fun setupNavController() {
         controller =
             (supportFragmentManager.findFragmentById(binding.navHost.id) as NavHostFragment).navController
-        progressBar = binding.progressBar
+
+        binding.bottomNavigation.setupWithNavController(controller)
 
         lifecycleScope.launch {
             viewModel.session.collect { session ->
                 val navGraph = controller.navInflater.inflate(R.navigation.nav_graph)
                 if (session) {
-                    navGraph.setStartDestination(R.id.homeFragment)
-                } else {
-                    navGraph.setStartDestination(R.id.getStartedFragment)
+                    controller.navigate(R.id.homeFragment)
                 }
                 controller.graph = navGraph
             }
         }
 
-        setupBottomNavigation()
+        controller.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.homeFragment -> {
+                    showBottomNavigation()
+                }
+
+                R.id.recipeFragment -> {
+                    showBottomNavigation()
+                }
+
+                R.id.favoriteFragment -> {
+                    showBottomNavigation()
+                }
+
+                R.id.profileFragment -> {
+                    showBottomNavigation()
+                }
+
+                else -> hideBottomNavigation()
+            }
+        }
     }
 
     private fun setupBottomNavigation() {
-        binding.navigation.setOnItemSelectedListener {
-            when (it.itemId) {
-                R.id.nav_home -> {
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.navHost, HomeFragment(), null)
-                        .commit()
-                    true
-                }
+    }
 
-                R.id.nav_recipe -> {
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.navHost, RecipeFragment(), null)
-                        .commit()
-                    true
-                }
+    private fun setupProgressBar() {
+        progressBar = binding.progressBar
+    }
 
-                R.id.nav_favorite -> {
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.navHost, FavoriteFragment(), null)
-                        .commit()
-                    true
-                }
+    private fun showBottomNavigation() {
+        binding.bottomNavigation.visibility = View.VISIBLE
+    }
 
-                R.id.nav_profile -> {
-                    supportFragmentManager
-                        .beginTransaction()
-                        .replace(R.id.navHost, ProfileFragment(), null)
-                        .commit()
-                    true
-                }
-
-                else -> false
-            }
-        }
+    private fun hideBottomNavigation() {
+        binding.bottomNavigation.visibility = View.GONE
     }
 
     fun showLoading(isLoading: Boolean) {
