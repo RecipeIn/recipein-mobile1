@@ -1,4 +1,4 @@
-package com.lans.recipein_mobile.presentation.profile
+package com.lans.recipein_mobile.presentation.favorite.folder
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,10 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.lans.recipein_mobile.R
+import com.lans.recipein_mobile.databinding.FragmentFolderBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProfileFragment : Fragment() {
+class FolderFragment : Fragment() {
+    private lateinit var binding: FragmentFolderBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,8 +22,9 @@ class ProfileFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_profile, container, false)
+        binding = FragmentFolderBinding.inflate(layoutInflater)
+        return binding.root
     }
+
 
 }
