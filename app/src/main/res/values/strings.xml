@@ -67,4 +67,21 @@
     <string name="by">By</string>
     <string name="name">Name</string>
     <string name="_30_menit">30 Menit</string>
+    <string name="profile">Profile</string>
+    <string name="nama">Ernawati</string>
+    <string name="profile_desc">Salam hangat dari dapur yang penuh aroma dan kehangatan! Saya adalah Ernawati, seorang pecinta masakan yang selalu mencari inspirasi baru untuk menghidangkan kreasi kuliner istimewa.</string>
+    <string name="resepku">Resepku</string>
+    <string name="nuttrisiku">Nutrisiku</string>
+    <string name="nutrisi">Nutrisi Harian</string>
+    <string name="kalori">Kalori</string>
+    <string name="karbo">Karbo</string>
+    <string name="serat">Serat</string>
+    <string name="lemak">Lemak</string>
+    <string name="protein">Protein</string>
+    <string name="vitamin">Vitamin</string>
+    <string name="firstname">Nama Depan</string>
+    <string name="lastname">Nama Belakang</string>
+    <string name="tglLahir">Tanggal Lahir</string>
+    <string name="desc">Deskripsi</string>
+    <string name="simpan_perubahan">Simpan Perubahan</string>
 </resources>
