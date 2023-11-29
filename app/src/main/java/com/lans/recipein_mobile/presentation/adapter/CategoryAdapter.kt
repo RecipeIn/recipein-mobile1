@@ -11,14 +11,18 @@ class CategoryAdapter(private val list: List<Category>) :
     inner class ViewHolder(val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val binding =
-            ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return ViewHolder(binding)
+        return ViewHolder(
+            ItemCategoryBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val (image, title) = list[position]
-        holder.binding.imgCategory.setImageResource(image)
+        holder.binding.ivCategory.setImageResource(image)
         holder.binding.tvCategory.text = title
     }
 

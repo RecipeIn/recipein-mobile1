@@ -16,7 +16,6 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentHomeBinding
-import com.lans.recipein_mobile.domain.model.Carousel
 import com.lans.recipein_mobile.domain.model.Category
 import com.lans.recipein_mobile.domain.model.CollectionRecipe
 import com.lans.recipein_mobile.domain.model.RecipeRecomendation
@@ -32,16 +31,16 @@ class HomeFragment : Fragment(), OnClickListener {
     private lateinit var binding: FragmentHomeBinding
     private val viewModel: HomeViewModel by viewModels()
 
+    private lateinit var adapter: CarouselAdapter
+    private lateinit var dots: ArrayList<TextView>
     private lateinit var rvFoodRecommendation: RecyclerView
     private lateinit var rvDrinkRecommendation: RecyclerView
     private lateinit var rvRecipeCollection: RecyclerView
     private lateinit var rvNewRecipe: RecyclerView
-    private lateinit var dots: ArrayList<TextView>
-    private lateinit var adapter: CarouselAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentHomeBinding.inflate(layoutInflater)
         return binding.root
@@ -215,7 +214,7 @@ class HomeFragment : Fragment(), OnClickListener {
 
     @Suppress("NAME_SHADOWING")
     private fun setupCarousel() {
-        val imageList: MutableList<Carousel> = mutableListOf()
+        val imageList: MutableList<Int> = mutableListOf()
         val image: List<Int> = listOf(
             R.drawable.image_carousel_1,
             R.drawable.image_carousel_2,
@@ -223,14 +222,14 @@ class HomeFragment : Fragment(), OnClickListener {
         )
 
         image.forEachIndexed { _, image ->
-            imageList.add(Carousel(image))
+            imageList.add(image)
         }
 
         adapter = CarouselAdapter(imageList)
-        binding.viewPager.adapter = adapter
+        binding.vpCarousel.adapter = adapter
         dots = ArrayList()
         setIndicator()
-        binding.viewPager.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+        binding.vpCarousel.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 selectedDot(position)
                 super.onPageSelected(position)

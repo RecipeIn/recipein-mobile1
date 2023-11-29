@@ -34,4 +34,20 @@
         <item name="chipStartPadding">12dp</item>
         <item name="chipEndPadding">12dp</item>
     </style>
+
+    <style name="DrawableLarge">
+        <item name="android:textSize">10sp</item>
+        <item name="android:scaleX">1.6</item>
+        <item name="android:scaleY">1.6</item>
+    </style>
+
+    <style name="DrawableNormal">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="DrawableSmall">
+        <item name="android:textSize">20sp</item>
+        <item name="android:scaleX">0.8</item>
+        <item name="android:scaleY">0.8</item>
+    </style>
 </resources>

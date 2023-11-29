@@ -12,13 +12,13 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor(
-    private val checkSessionUseCase: CheckSessionUseCase
+    private val checkSessionUseCase: CheckSessionUseCase,
 ) : ViewModel() {
-    private val _session = MutableStateFlow(false)
-    val session: Flow<Boolean> get() = _session
+    private val _session = MutableStateFlow<Boolean?>(null)
+    val session: Flow<Boolean?> get() = _session
 
-    private val _error = MutableStateFlow("")
-    val error: Flow<String> get() = _error
+    private val _error = MutableStateFlow<String?>(null)
+    val error: Flow<String?> get() = _error
 
     private val _loading = MutableStateFlow(false)
     val loading: Flow<Boolean> get() = _loading

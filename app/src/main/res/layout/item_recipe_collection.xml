@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     style="@style/Widget.Material3.CardView.Elevated"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -15,18 +14,18 @@
         android:backgroundTint="@color/white">
 
         <ImageView
-            android:id="@+id/imgCollectionRecipe"
+            android:id="@+id/ivCollectionRecipe"
             android:layout_width="150dp"
             android:layout_height="168dp"
             android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
+            android:src="@drawable/img_background1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvTitleCollection"
+            android:id="@+id/tvCollectionTitle"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="18dp"
@@ -36,19 +35,19 @@
             android:text="@string/kumpulan_resep_salad_segar"
             android:textSize="@dimen/subheading"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/imgCollectionRecipe"
+            app:layout_constraintStart_toEndOf="@id/ivCollectionRecipe"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvDescriptionCollection"
+            android:id="@+id/tvCollectionDesc"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/buat_kalian_yang_lagi_ingin_diet"
             android:textSize="@dimen/body2"
-            app:layout_constraintStart_toStartOf="@id/tvTitleCollection"
-            app:layout_constraintTop_toBottomOf="@id/tvTitleCollection" />
+            app:layout_constraintStart_toStartOf="@id/tvCollectionTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvCollectionTitle" />
 
         <TextView
             android:id="@+id/tvBy"
@@ -59,11 +58,11 @@
             android:text="@string/by"
             android:textSize="@dimen/body2"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/tvAuthorCollection"
-            app:layout_constraintStart_toStartOf="@id/tvDescriptionCollection" />
+            app:layout_constraintEnd_toStartOf="@id/tvName"
+            app:layout_constraintStart_toStartOf="@id/tvCollectionDesc" />
 
         <TextView
-            android:id="@+id/tvAuthorCollection"
+            android:id="@+id/tvName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"

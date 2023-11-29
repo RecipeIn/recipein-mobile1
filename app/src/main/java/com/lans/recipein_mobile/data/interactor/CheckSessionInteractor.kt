@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class CheckSessionInteractor @Inject constructor(
-    private val userRepository: IUserRepository
+    private val userRepository: IUserRepository,
 ) : CheckSessionUseCase {
     override suspend fun invoke(): Flow<Resource<Boolean>> {
         return flow {

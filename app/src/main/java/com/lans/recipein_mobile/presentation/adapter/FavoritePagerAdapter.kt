@@ -6,20 +6,20 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import com.lans.recipein_mobile.presentation.favorite.folder.FolderFragment
 import com.lans.recipein_mobile.presentation.favorite.liked.LikedFragment
 
-class FavoritePagerAdapter(fm : FragmentManager, val fragmentCount : Int): FragmentStatePagerAdapter(fm) {
+class FavoritePagerAdapter(fm: FragmentManager, private val fragmentCount: Int) :
+    FragmentStatePagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private val fragmentTitleList = mutableListOf("Disukai", "Folder")
 
     override fun getItem(position: Int): Fragment {
-
-        when (position) {
-            0 -> return LikedFragment()
-            1 -> return FolderFragment()
-            else -> return LikedFragment()
+        return when (position) {
+            0 -> LikedFragment()
+            1 -> FolderFragment()
+            else -> LikedFragment()
         }
     }
 
-    override fun getPageTitle(position: Int): CharSequence? {
+    override fun getPageTitle(position: Int): CharSequence {
         return fragmentTitleList[position]
     }
 

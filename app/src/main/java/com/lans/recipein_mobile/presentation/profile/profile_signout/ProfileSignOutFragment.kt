@@ -1,4 +1,4 @@
-package com.lans.recipein_mobile.presentation.change_password
+package com.lans.recipein_mobile.presentation.profile.profile_signout
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,23 +7,19 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.google.android.material.textfield.TextInputLayout
-import com.lans.recipein_mobile.R
-import com.lans.recipein_mobile.databinding.FragmentChangePasswordBinding
+import com.lans.recipein_mobile.databinding.FragmentProfileSignoutBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ChangePasswordFragment : Fragment(), OnClickListener {
-    private lateinit var binding: FragmentChangePasswordBinding
-    private val viewModel: ChangePasswordViewModel by viewModels()
-
-    private lateinit var emailLayout: TextInputLayout
+class ProfileSignOutFragment : Fragment(), OnClickListener {
+    private lateinit var binding: FragmentProfileSignoutBinding
+    private val viewModel: ProfileSignOutViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentChangePasswordBinding.inflate(layoutInflater)
+        binding = FragmentProfileSignoutBinding.inflate(layoutInflater)
         return binding.root
     }
 
@@ -33,15 +29,12 @@ class ChangePasswordFragment : Fragment(), OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id) {
-            R.id.btnSend -> {
+        when (v!!.id) {
 
-            }
         }
     }
 
     private fun initializeComponent() {
-        emailLayout = binding.etEmailLayout
-        binding.btnSend.setOnClickListener(this)
+
     }
 }

@@ -67,11 +67,10 @@
     <string name="by">By</string>
     <string name="name">Name</string>
     <string name="_30_menit">30 Menit</string>
-    <string name="profile">Profile</string>
     <string name="nama">Ernawati</string>
     <string name="profile_desc">Salam hangat dari dapur yang penuh aroma dan kehangatan! Saya adalah Ernawati, seorang pecinta masakan yang selalu mencari inspirasi baru untuk menghidangkan kreasi kuliner istimewa.</string>
     <string name="resepku">Resepku</string>
-    <string name="nuttrisiku">Nutrisiku</string>
+    <string name="nutrisiku">Nutrisiku</string>
     <string name="nutrisi">Nutrisi Harian</string>
     <string name="kalori">Kalori</string>
     <string name="karbo">Karbo</string>
@@ -84,4 +83,23 @@
     <string name="tglLahir">Tanggal Lahir</string>
     <string name="desc">Deskripsi</string>
     <string name="simpan_perubahan">Simpan Perubahan</string>
+    <string name="koleksi_resep">Koleksi Resep</string>
+    <string name="simpan">Simpan</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</string>
+    <string name="nutrisi_harian">Nutrisi Harian</string>
+    <string name="_200_kkal">200 Kkal</string>
+    <string name="_10g">10g</string>
+    <string name="_100g">100g</string>
+    <string name="oopss">Oopss!!</string>
+    <string name="anda_belum_masuk_ayo_masuk_terlebih_dahulu">Anda belum masuk, ayo masuk terlebih dahulu</string>
+    <string name="belum_punya_akun">Belum punya akun?</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="nama_depan">Nama Depan</string>
+    <string name="nama_belakang">Nama Belakang</string>
+    <string name="perbaharui_nutrisi_harian">Perbaharui Nutrisi Harian</string>
+    <string name="age">Age</string>
+    <string name="tb">TB</string>
+    <string name="gender">Gender</string>
+    <string name="bb">BB</string>
+    <string name="activity">Activity</string>
 </resources>

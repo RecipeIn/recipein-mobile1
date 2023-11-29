@@ -1,4 +1,4 @@
-package com.lans.recipein_mobile.presentation.profile
+package com.lans.recipein_mobile.presentation.profile.profile_signin
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,23 +6,25 @@ import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.lans.recipein_mobile.R
-import com.lans.recipein_mobile.databinding.FragmentProfileBinding
+import com.lans.recipein_mobile.databinding.FragmentProfileSigninBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProfileFragment : Fragment(), OnClickListener {
-    private lateinit var binding: FragmentProfileBinding
-  
+class ProfileSignInFragment : Fragment(), OnClickListener {
+    private lateinit var binding: FragmentProfileSigninBinding
+    private val viewModel: ProfileSignInViewModel by viewModels()
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
-        binding = FragmentProfileBinding.inflate(layoutInflater)
+        binding = FragmentProfileSigninBinding.inflate(layoutInflater)
         return binding.root
     }
-    
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initializeComponent()
@@ -31,7 +33,8 @@ class ProfileFragment : Fragment(), OnClickListener {
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.btnSetting -> {
-                val action = ProfileFragmentDirections.actionProfileFragmentToSettingFragment()
+                val action =
+                    ProfileSignInFragmentDirections.actionProfileSignInFragmentSettingFragment()
                 findNavController().navigate(action)
             }
         }

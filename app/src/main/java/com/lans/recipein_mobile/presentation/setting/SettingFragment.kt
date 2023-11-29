@@ -31,6 +31,14 @@ class SettingFragment : Fragment(), OnClickListener {
     }
 
     private fun initializeComponent() {
+        binding.tvMyProfile.setOnClickListener(this)
+        binding.tvChangePassword.setOnClickListener(this)
+        binding.tvLanguage.setOnClickListener(this)
+        binding.tvAboutUs.setOnClickListener(this)
+        binding.tvTermsOfService.setOnClickListener(this)
+        binding.tvPrivacyPolicy.setOnClickListener(this)
+        binding.tvContact.setOnClickListener(this)
+        binding.tvFAQ.setOnClickListener(this)
         binding.tvLogout.setOnClickListener(this)
     }
 
@@ -38,6 +46,8 @@ class SettingFragment : Fragment(), OnClickListener {
         when (v!!.id) {
             R.id.tvLogout -> {
                 viewModel.signOut()
+                val action = SettingFragmentDirections.actionSettingFragmentToSignInFragment()
+                findNavController().navigate(action)
             }
         }
     }

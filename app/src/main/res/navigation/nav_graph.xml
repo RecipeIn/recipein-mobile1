@@ -2,14 +2,13 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph"
-    app:startDestination="@id/getStartedFragment">
+    android:id="@+id/nav_graph">
 
     <fragment
         android:id="@+id/getStartedFragment"
         android:name="com.lans.recipein_mobile.presentation.get_started.GetStartedFragment"
         android:label="fragment_get_started"
-        tools:layout="@layout/fragment_get_started" >
+        tools:layout="@layout/fragment_get_started">
         <action
             android:id="@+id/action_getStartedFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
@@ -21,7 +20,7 @@
         android:id="@+id/signInFragment"
         android:name="com.lans.recipein_mobile.presentation.signin.SignInFragment"
         android:label="fragment_sign_in"
-        tools:layout="@layout/fragment_sign_in" >
+        tools:layout="@layout/fragment_sign_in">
         <action
             android:id="@+id/action_signInFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
@@ -33,7 +32,7 @@
         android:id="@+id/signUpFragment"
         android:name="com.lans.recipein_mobile.presentation.signup.SignUpFragment"
         android:label="fragment_sign_up"
-        tools:layout="@layout/fragment_sign_up" >
+        tools:layout="@layout/fragment_sign_up">
         <action
             android:id="@+id/action_signUpFragment_to_signInFragment"
             app:destination="@id/signInFragment" />
@@ -42,7 +41,7 @@
         android:id="@+id/changePasswordFragment"
         android:name="com.lans.recipein_mobile.presentation.change_password.ChangePasswordFragment"
         android:label="fragment_change_password"
-        tools:layout="@layout/fragment_change_password" >
+        tools:layout="@layout/fragment_change_password">
         <action
             android:id="@+id/action_changePasswordFragment_to_konfirmasiCodeFragment"
             app:destination="@id/konfirmasiCodeFragment" />
@@ -51,7 +50,7 @@
         android:id="@+id/konfirmasiCodeFragment"
         android:name="com.lans.recipein_mobile.presentation.verification_code.VerificationCodeFragment"
         android:label="fragment_konfirmasi_code"
-        tools:layout="@layout/fragment_verification_code" >
+        tools:layout="@layout/fragment_verification_code">
         <action
             android:id="@+id/action_konfirmasiCodeFragment_to_newPasswordFragment"
             app:destination="@id/newPasswordFragment" />
@@ -65,7 +64,7 @@
         android:id="@+id/homeFragment"
         android:name="com.lans.recipein_mobile.presentation.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
+        tools:layout="@layout/fragment_home">
         <action
             android:id="@+id/action_homeFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
@@ -74,31 +73,16 @@
         android:id="@+id/favoriteFragment"
         android:name="com.lans.recipein_mobile.presentation.favorite.FavoriteFragment"
         android:label="fragment_favorite"
-        tools:layout="@layout/fragment_favorite" >
-        <action
-            android:id="@+id/action_favoriteFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+        tools:layout="@layout/fragment_favorite">
         <action
             android:id="@+id/action_favoriteFragment_to_recipeFragment"
             app:destination="@id/recipeFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
-        android:name="com.lans.recipein_mobile.presentation.profile.ProfileFragment"
-        android:label="fragment_profile"
-        tools:layout="@layout/fragment_profile" >
-        <action
-            android:id="@+id/action_profileFragment_to_settingFragment"
-            app:destination="@id/settingFragment" />
-        <action
-            android:id="@+id/action_profileFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/recipeFragment"
         android:name="com.lans.recipein_mobile.presentation.recipe.RecipeFragment"
         android:label="fragment_recipe"
-        tools:layout="@layout/fragment_recipe" >
+        tools:layout="@layout/fragment_recipe">
         <action
             android:id="@+id/action_recipeFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
@@ -110,12 +94,29 @@
         android:id="@+id/settingFragment"
         android:name="com.lans.recipein_mobile.presentation.setting.SettingFragment"
         android:label="fragment_setting"
-        tools:layout="@layout/fragment_setting" >
+        tools:layout="@layout/fragment_setting">
         <action
             android:id="@+id/action_settingFragment_to_signInFragment"
-            app:destination="@id/signInFragment" />
+            app:destination="@id/signInFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_settingFragment_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
     </fragment>
+    <navigation android:id="@+id/navProfile">
+        <fragment
+            android:id="@+id/profileSignInFragment"
+            android:name="com.lans.recipein_mobile.presentation.profile.profile_signin.ProfileSignInFragment"
+            android:label="fragment_profile_signin"
+            tools:layout="@layout/fragment_profile_signin">
+            <action
+                android:id="@+id/action_profileSignInFragment_settingFragment"
+                app:destination="@id/settingFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/profileSignOutFragment"
+            android:name="com.lans.recipein_mobile.presentation.profile.profile_signout.ProfileSignOutFragment"
+            android:label="fragment_profile_signout"
+            tools:layout="@layout/fragment_profile_signout" />
+    </navigation>
 </navigation>

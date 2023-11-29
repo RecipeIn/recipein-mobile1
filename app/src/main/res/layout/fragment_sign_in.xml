@@ -114,10 +114,10 @@
                 android:id="@+id/cbRememberMe"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
                 android:fontFamily="@font/nunito_regular"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
-                android:layout_marginTop="8dp"
                 android:text="@string/remember_me"
                 android:textSize="@dimen/body1"
                 app:layout_constraintStart_toStartOf="@id/etPasswordLayout"
@@ -149,8 +149,7 @@
                 android:textSize="@dimen/subheading"
                 app:cornerRadius="10dp"
                 app:layout_constraintTop_toBottomOf="@id/cbRememberMe"
-                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck"
-                tools:layout_editor_absoluteX="24dp" />
+                tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck"  />
 
             <View
                 android:layout_width="0dp"
@@ -195,7 +194,7 @@
                 android:textAllCaps="false"
                 android:textColor="@color/neutral90"
                 android:textSize="@dimen/body1"
-                app:layout_constraintTop_toBottomOf="@+id/dividerText"
+                app:layout_constraintTop_toBottomOf="@id/dividerText"
                 tools:ignore="VisualLintButtonSize" />
 
             <LinearLayout

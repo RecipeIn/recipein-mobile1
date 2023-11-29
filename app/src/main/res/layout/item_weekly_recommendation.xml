@@ -34,8 +34,8 @@
                 android:layout_height="100dp"
                 android:contentDescription="@string/todo"
                 android:scaleType="centerCrop"
-                tools:ignore="ImageContrastCheck"
-                tools:srcCompat="@tools:sample/avatars" />
+                android:src="@drawable/img_background1"
+                tools:ignore="ImageContrastCheck" />
 
         </com.google.android.material.card.MaterialCardView>
 

@@ -5,26 +5,24 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.lans.recipein_mobile.databinding.ItemCarouselBinding
-import com.lans.recipein_mobile.domain.model.Carousel
 
 class CarouselAdapter(
-    private val items: List<Carousel>
-): RecyclerView.Adapter<CarouselAdapter.ImageViewHolder>() {
+    private val items: List<Int>,
+) : RecyclerView.Adapter<CarouselAdapter.ViewHolder>() {
 
-    inner class ImageViewHolder(itemView: ItemCarouselBinding) :
-        RecyclerView.ViewHolder(itemView.root) {
-        private val binding = itemView
-        fun bind(data: Carousel) {
+    inner class ViewHolder(private val binding: ItemCarouselBinding) :
+        RecyclerView.ViewHolder(binding.root) {
+        fun bind(data: Int) {
             with(binding) {
                 Glide.with(itemView)
-                    .load(data.imageUrl)
+                    .load(data)
                     .into(ivCarousel)
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        return ImageViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
             ItemCarouselBinding.inflate(
                 LayoutInflater.from(parent.context),
                 parent,
@@ -33,7 +31,7 @@ class CarouselAdapter(
         )
     }
 
-    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.bind(items[position])
     }
 
