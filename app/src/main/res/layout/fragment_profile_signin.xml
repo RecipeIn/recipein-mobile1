@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="76dp"
+    android:paddingBottom="68dp"
     tools:context=".presentation.profile.profile_signin.ProfileSignInFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -26,7 +26,7 @@
             android:id="@+id/tvProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="36dp"
+            android:layout_marginTop="24dp"
             android:text="@string/profile"
             android:textSize="@dimen/heading3"
             app:fontFamily="@font/nunito_extrabold"
@@ -36,8 +36,8 @@
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/ivProfilePicture"
-            android:layout_width="110dp"
-            android:layout_height="110dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="24dp"
             android:adjustViewBounds="true"
             android:contentDescription="@string/todo"
@@ -315,7 +315,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_rounded"
                 android:backgroundTint="@color/white"
-                android:entries="@array/author"
+                android:entries="@array/collection_activity"
                 android:spinnerMode="dropdown"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.6"
@@ -412,7 +412,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_rounded"
                 android:backgroundTint="@color/white"
-                android:entries="@array/author"
+                android:entries="@array/collection_gender"
                 android:spinnerMode="dropdown"
                 app:layout_constraintBottom_toBottomOf="@id/tvGender"
                 app:layout_constraintStart_toStartOf="@id/etAgeValue"
