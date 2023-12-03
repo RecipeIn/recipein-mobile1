@@ -103,4 +103,7 @@
     <string name="bb">BB</string>
     <string name="activity">Activity</string>
     <string name="desc_kumpulan_resep_salad">Resep-resep salad sehat namun tetap nikmat \nuntuk disantap.</string>
+    <string name="nasgor_enak">Nasgor Enak</string>
+    <string name="desc_nasgor_enak">Resep-resep nasi goreng yang enak untuk dicoba \nketika perut kosong.</string>
+    <string name="jumlah_nasgor">3 Resep</string>
 </resources>
