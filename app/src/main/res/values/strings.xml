@@ -102,4 +102,7 @@
     <string name="gender">Gender</string>
     <string name="bb">BB</string>
     <string name="activity">Activity</string>
+    <string name="status_resep">Lihat Status Resep Yang kamu Kirim</string>
+    <string name="nama_folder">Nama Folder</string>
+    <string name="jumlah_resep">Jumlah Resep</string>
 </resources>
