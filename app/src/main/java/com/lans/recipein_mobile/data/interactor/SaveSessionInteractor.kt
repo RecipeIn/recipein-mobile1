@@ -7,7 +7,7 @@ import javax.inject.Inject
 class SaveSessionInteractor @Inject constructor(
     private val userRepository: IUserRepository
 ): SaveSessionUseCase {
-    override suspend fun invoke(params: String) {
-        userRepository.storeEmail(params)
+    override suspend fun invoke(email: String) {
+        userRepository.storeEmail(email)
     }
 }

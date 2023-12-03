@@ -19,5 +19,6 @@
     <color name="neutral90">#FF4D4D4D</color>
     <color name="success">#FF1E2C48</color>
     <color name="warning">#FF1E2C48</color>
-    <color name="error">#FF1E2C48</color>
+    <color name="error">#FFCE272C</color>
+    <color name="error10">#FFF7D4D5</color>
 </resources>

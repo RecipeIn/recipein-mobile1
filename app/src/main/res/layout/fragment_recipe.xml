@@ -26,50 +26,58 @@
         android:text="@string/advanced_search"
         android:textColor="@color/secondary50"
         android:textSize="@dimen/body2"
-        app:layout_constraintBottom_toTopOf="@id/cgCategory"
+        app:layout_constraintBottom_toTopOf="@id/scrollCategory"
         app:layout_constraintEnd_toEndOf="@id/svRecipe"
         app:layout_constraintTop_toBottomOf="@id/svRecipe" />
 
-    <com.google.android.material.chip.ChipGroup
-        android:id="@+id/cgCategory"
+    <HorizontalScrollView
+        android:id="@+id/scrollCategory"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:scrollbars="none"
         app:layout_constraintBottom_toTopOf="@id/scrollRecipe"
         app:layout_constraintEnd_toEndOf="@+id/svRecipe"
         app:layout_constraintStart_toStartOf="@+id/svRecipe"
-        app:layout_constraintTop_toBottomOf="@id/tvAdvancedSearch"
-        app:singleLine="true"
-        app:singleSelection="true">
+        app:layout_constraintTop_toBottomOf="@id/tvAdvancedSearch">
 
-        <com.google.android.material.chip.Chip
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cgCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
-            android:text="All" />
+            app:singleLine="true"
+            app:singleSelection="true">
 
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Sarapan" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="All" />
 
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Cemilan" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sarapan" />
 
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Padang" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cemilan" />
 
-        <com.google.android.material.chip.Chip
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Fast Food"
-            tools:ignore="VisualLintBounds" />
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Padang" />
 
-    </com.google.android.material.chip.ChipGroup>
+            <com.google.android.material.chip.Chip
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fast Food"
+                tools:ignore="VisualLintBounds" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
 
     <ScrollView
         android:id="@+id/scrollRecipe"
@@ -79,10 +87,10 @@
         android:scrollbars="none"
         app:layout_constraintEnd_toEndOf="@id/svRecipe"
         app:layout_constraintStart_toStartOf="@id/svRecipe"
-        app:layout_constraintTop_toBottomOf="@id/cgCategory">
+        app:layout_constraintTop_toBottomOf="@id/scrollCategory">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/tvRecipe"
+            android:id="@+id/rvRecipe"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:listitem="@layout/item_recipe" />
