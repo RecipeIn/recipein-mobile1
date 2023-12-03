@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.recipe.recipepage.RecipePageFragment">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivRecipePage"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/btnShare"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <ImageButton
+            android:id="@+id/btnFavorite"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_love_recipe"
+            app:layout_constraintEnd_toStartOf="@+id/btnShare"
+            app:layout_constraintTop_toTopOf="@+id/btnShare" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:background="@drawable/gradient_view"
+            app:layout_constraintBottom_toBottomOf="@+id/ivRecipePage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTittleCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="110dp"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/donat_kentang"
+            android:textSize="@dimen/heading3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+
+        <TextView
+            android:id="@+id/tvDescCategory"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/desc_recipe"
+            android:textSize="@dimen/body2"
+            app:layout_constraintEnd_toEndOf="@+id/tvTittleCategory"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/tvTittleCategory"
+            app:layout_constraintTop_toBottomOf="@+id/tvTittleCategory" />
+
+        <TextView
+            android:id="@+id/tvCategory1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/lezat_dan_cepat"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="@+id/tvDescCategory"
+            app:layout_constraintTop_toBottomOf="@+id/ivRecipePage" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvCategory1"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory1" />
+
+        <TextView
+            android:id="@+id/tvCategory2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/roti_bakar_simple"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="@+id/rvCategory1"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategory1" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvCategory2"
+            app:layout_constraintTop_toBottomOf="@+id/tvCategory2" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
