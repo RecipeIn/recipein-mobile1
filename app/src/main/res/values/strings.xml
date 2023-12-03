@@ -102,4 +102,6 @@
     <string name="gender">Gender</string>
     <string name="bb">BB</string>
     <string name="activity">Activity</string>
+    <string name="status_resep">Status Resep</string>
+    <string name="rating">4.5/5</string>
 </resources>
