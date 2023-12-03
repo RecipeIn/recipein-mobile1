@@ -59,6 +59,15 @@
     <string name="lebih_banyak">Lebih Banyak</string>
     <string name="lezat_dan_cepat">Lezat dan Cepat</string>
     <string name="roti_bakar_simple">Roti Bakar Simple</string>
+    <string name="tambah_resep">Tambah Resep</string>
+    <string name="foto_5_5">+ Foto (5/5)</string>
+    <string name="nama_resep">Nama Resep</string>
+    <string name="jenis_kategori">Jenis/Kategori</string>
+    <string name="waktu_persiapan">Waktu Persiapan</string>
+    <string name="waktu_memasak">Waktu Memasak</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="sate">Sate</string>
+    <string name="langkah">Langkah</string>
 
     <string-array name="category_review">
         <item>Terbaru</item>
