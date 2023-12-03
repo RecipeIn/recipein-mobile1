@@ -20,7 +20,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/ic_close"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/tvAddRecipe"
@@ -44,7 +45,8 @@
             app:layout_constraintEnd_toEndOf="@+id/tvAddRecipe"
             app:layout_constraintStart_toEndOf="@+id/btnClose"
             app:layout_constraintTop_toBottomOf="@+id/tvAddRecipe"
-            tools:srcCompat="@tools:sample/avatars" />
+            tools:srcCompat="@tools:sample/avatars"
+            tools:ignore="ContentDescription" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddImage"
@@ -141,7 +143,8 @@
                 android:id="@+id/etTimePreparation"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -169,7 +172,8 @@
                 android:id="@+id/etTimeCooking"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -197,7 +201,8 @@
                 android:id="@+id/etDescription"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
@@ -219,7 +224,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/ic_plus"
             app:layout_constraintStart_toEndOf="@+id/tvIngredients"
-            app:layout_constraintTop_toBottomOf="@+id/etDescriptionLayout" />
+            app:layout_constraintTop_toBottomOf="@+id/etDescriptionLayout"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
         <View
             android:id="@+id/view2"
@@ -250,7 +256,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/ic_plus"
             app:layout_constraintStart_toEndOf="@+id/tvIngredients1"
-            app:layout_constraintTop_toBottomOf="@+id/view2" />
+            app:layout_constraintTop_toBottomOf="@+id/view2"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/etAddIngredients1Layout"
@@ -266,7 +273,8 @@
                 android:id="@+id/etAddIngredients1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -283,7 +291,8 @@
                 android:id="@+id/etAddSize1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -300,7 +309,8 @@
                 android:id="@+id/etAddeasure1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -319,7 +329,8 @@
                 android:id="@+id/etAddIngredients2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -336,7 +347,8 @@
                 android:id="@+id/etAddSize2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -353,7 +365,8 @@
                 android:id="@+id/etAddeasure2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -372,7 +385,8 @@
                 android:id="@+id/etAddIngredients3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -389,7 +403,8 @@
                 android:id="@+id/etAddSize3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -406,7 +421,8 @@
                 android:id="@+id/etAddeasure3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -429,7 +445,8 @@
             android:background="?android:attr/selectableItemBackground"
             android:src="@drawable/ic_plus"
             app:layout_constraintStart_toEndOf="@+id/tvSteps"
-            app:layout_constraintTop_toBottomOf="@+id/etAddIngredients3Layout" />
+            app:layout_constraintTop_toBottomOf="@+id/etAddIngredients3Layout"
+            tools:ignore="ContentDescription,SpeakableTextPresentCheck" />
 
         <View
             android:id="@+id/view3"
@@ -460,7 +477,8 @@
                 android:id="@+id/etSteps1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -481,7 +499,8 @@
                 android:id="@+id/etSteps2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/background_edittext" />
+                android:background="@drawable/background_edittext"
+                tools:ignore="SpeakableTextPresentCheck" />
         </com.google.android.material.textfield.TextInputLayout>
 
 
