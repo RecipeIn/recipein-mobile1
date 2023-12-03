@@ -1,0 +1,32 @@
+package com.lans.recipein_mobile.presentation.adapter
+
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.lans.recipein_mobile.databinding.ItemCategoryBinding
+import com.lans.recipein_mobile.domain.model.Category
+
+class CategoryAdapter(private val list: List<Category>) :
+    RecyclerView.Adapter<CategoryAdapter.ViewHolder>() {
+    inner class ViewHolder(val binding: ItemCategoryBinding) : RecyclerView.ViewHolder(binding.root)
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        return ViewHolder(
+            ItemCategoryBinding.inflate(
+                LayoutInflater.from(parent.context),
+                parent,
+                false
+            )
+        )
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        val (image, title) = list[position]
+        holder.binding.ivCategory.setImageResource(image)
+        holder.binding.tvCategory.text = title
+    }
+
+    override fun getItemCount(): Int {
+        return list.size
+    }
+}

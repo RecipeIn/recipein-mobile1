@@ -11,7 +11,7 @@ class UserRepository(
     override suspend fun isLoggedIn(): Flow<Boolean> {
         return flow {
             dataStoreManager.email.collect { email ->
-                emit(email.isNotEmpty())
+                emit(email.isNotBlank())
             }
         }
     }

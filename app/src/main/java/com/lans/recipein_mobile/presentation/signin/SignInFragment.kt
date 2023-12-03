@@ -27,7 +27,7 @@ class SignInFragment : Fragment(), OnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentSignInBinding.inflate(layoutInflater)
         return binding.root
@@ -74,10 +74,11 @@ class SignInFragment : Fragment(), OnClickListener {
 
     private suspend fun observeSignIn() {
         viewModel.state.collect { result ->
+            (requireActivity() as MainActivity).showLoading(result.isLoading)
+
             if (result.user != null) {
-                viewModel.storeCustomerId(result.user!!.id)
-                val action =
-                    SignInFragmentDirections.actionSignInFragmentToHomeFragment()
+                viewModel.saveSession(result.user!!.email)
+                val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
                 findNavController().navigate(action)
             }
 
@@ -87,12 +88,6 @@ class SignInFragment : Fragment(), OnClickListener {
                     result.error,
                     Snackbar.LENGTH_SHORT
                 ).show()
-            }
-
-            if (result.isLoading) {
-                (requireActivity() as MainActivity).showLoading(true)
-            } else {
-                (requireActivity() as MainActivity).showLoading(false)
             }
 
             if (!result.emailError.isNullOrBlank()) {

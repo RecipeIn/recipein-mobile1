@@ -20,7 +20,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.4"
             tools:ignore="ImageContrastCheck" />
 
         <TextView
@@ -44,7 +43,7 @@
             android:layout_marginTop="4dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ic_burger_button"
-            app:layout_constraintEnd_toEndOf="@+id/appCompatRatingBar"
+            app:layout_constraintEnd_toEndOf="@id/ratingRecipe"
             app:layout_constraintTop_toTopOf="@id/tvCategory"
             app:tint="@color/neutral90" />
 
@@ -55,12 +54,12 @@
             android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito_extrabold"
             android:text="@string/recipe_name"
-            android:textSize="@dimen/heading4"
+            android:textSize="@dimen/subheading"
             app:layout_constraintStart_toStartOf="@id/tvCategory"
             app:layout_constraintTop_toBottomOf="@id/tvCategory" />
 
         <TextView
-            android:id="@+id/tvRecipeNameDesc"
+            android:id="@+id/tvRecipeDesc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
@@ -83,7 +82,7 @@
             android:textSize="@dimen/body2"
             app:layout_constraintEnd_toStartOf="@id/tvName"
             app:layout_constraintStart_toStartOf="@id/tvRecipeName"
-            app:layout_constraintTop_toBottomOf="@id/tvRecipeNameDesc" />
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeDesc" />
 
         <TextView
             android:id="@+id/tvName"

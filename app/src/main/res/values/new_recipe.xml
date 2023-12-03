@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="title_new_recipe">
+        <item>Ayam Bakar Kemangi</item>
+        <item>Ayam Kecap</item>
+        <item>Bakmmi Goreng jawa</item>
+        <item>Bakso Tusuk Pedas</item>
+    </string-array>
+
+    <string-array name="category_new_recipe">
+        <item>Ayam</item>
+        <item>Ayam</item>
+        <item>Mie</item>
+        <item>Bakso</item>
+    </string-array>
+
+    <string-array name="author_new_recipe">
+        <item>Dapur Sasa</item>
+        <item>Daniel</item>
+        <item>Natasha</item>
+        <item>Ernawati</item>
+    </string-array>
+
+    <string-array name="time_new_recipe">
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+    </string-array>
+</resources>

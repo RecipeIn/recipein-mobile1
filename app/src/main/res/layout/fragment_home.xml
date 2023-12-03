@@ -1,19 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="68dp"
     tools:context=".presentation.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/tvLogout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/logout"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <View
+            android:id="@+id/greetingBackground"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@color/primary50"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/hai_ernawati"
+            android:textAlignment="center"
+            android:textSize="@dimen/heading3"
+            app:layout_constraintBottom_toBottomOf="@id/greetingBackground"
+            app:layout_constraintEnd_toEndOf="@id/greetingBackground"
+            app:layout_constraintStart_toStartOf="@id/greetingBackground"
+            app:layout_constraintTop_toTopOf="@id/greetingBackground" />
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vpCarousel"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/greetingBackground" />
+
+        <LinearLayout
+            android:id="@+id/dotsIndicator"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal"
+            android:orientation="horizontal"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vpCarousel" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/kategori"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/vpCarousel" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategory"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tvCategory"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory"
+            tools:listitem="@layout/item_category" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardHealthyMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/primary30"
+            android:elevation="10dp"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="@id/rvCategory"
+            app:layout_constraintStart_toStartOf="@id/rvCategory"
+            app:layout_constraintTop_toBottomOf="@id/rvCategory">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivHealthyMenu"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginStart="8dp"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/logo_recipein"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvHealthyMenu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="24dp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/menu_sehat"
+                    android:textSize="@dimen/heading4"
+                    app:layout_constraintStart_toEndOf="@id/ivHealthyMenu"
+                    app:layout_constraintTop_toTopOf="@id/ivHealthyMenu" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:fontFamily="@font/nunito_regular"
+                    android:text="@string/rekomendasi_menu_sehat_dan_enak"
+                    android:textSize="@dimen/body3"
+                    app:layout_constraintStart_toStartOf="@id/tvHealthyMenu"
+                    app:layout_constraintTop_toBottomOf="@id/tvHealthyMenu" />
+
+                <ImageView
+                    android:id="@+id/ivHealthyMenuIllustration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/todo"
+                    android:src="@drawable/img_card_view_home"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/tvRecommendationFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/rekomendasi_makanan_mingguan"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="@id/cardHealthyMenu"
+            app:layout_constraintTop_toBottomOf="@id/cardHealthyMenu" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvFoodRecommendation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/cardHealthyMenu"
+            app:layout_constraintStart_toStartOf="@id/cardHealthyMenu"
+            app:layout_constraintTop_toBottomOf="@id/tvRecommendationFood"
+            tools:listitem="@layout/item_weekly_recommendation" />
+
+        <TextView
+            android:id="@+id/tvRecommendationDrink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/rekomendasi_minuman_mingguan"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="@id/rvFoodRecommendation"
+            app:layout_constraintTop_toBottomOf="@id/rvFoodRecommendation" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvDrinkRecommendation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/cardHealthyMenu"
+            app:layout_constraintStart_toStartOf="@id/tvRecommendationDrink"
+            app:layout_constraintTop_toBottomOf="@id/tvRecommendationDrink"
+            tools:listitem="@layout/item_weekly_recommendation" />
+
+        <TextView
+            android:id="@+id/tvCollection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/koleksi_resep"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="@id/rvDrinkRecommendation"
+            app:layout_constraintTop_toBottomOf="@id/rvDrinkRecommendation" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCollection"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/cardHealthyMenu"
+            app:layout_constraintStart_toStartOf="@id/tvCollection"
+            app:layout_constraintTop_toBottomOf="@id/tvCollection"
+            tools:listitem="@layout/item_recipe_collection" />
+
+        <TextView
+            android:id="@+id/tvNewRecipe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/resep_terbaru"
+            android:textSize="@dimen/subheading"
+            app:layout_constraintStart_toStartOf="@id/rvCollection"
+            app:layout_constraintTop_toBottomOf="@id/rvCollection" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNewRecipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/cardHealthyMenu"
+            app:layout_constraintStart_toStartOf="@id/tvNewRecipe"
+            app:layout_constraintTop_toBottomOf="@id/tvNewRecipe"
+            tools:listitem="@layout/item_recipe_new" />
+
+        <Button
+            android:id="@+id/btnMore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/secondary50"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/lebih_banyak"
+            android:textSize="@dimen/body2"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="@id/rvNewRecipe"
+            app:layout_constraintStart_toStartOf="@id/rvNewRecipe"
+            app:layout_constraintTop_toBottomOf="@id/rvNewRecipe" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

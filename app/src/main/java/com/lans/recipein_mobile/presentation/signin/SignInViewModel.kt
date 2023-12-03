@@ -59,8 +59,9 @@ class SignInViewModel @Inject constructor(
         return validate.isSuccess
     }
 
-    fun storeCustomerId(userId: Int) {
+    fun saveSession(email: String) {
         viewModelScope.launch {
+            saveSessionUseCase.invoke(email)
         }
     }
 }
