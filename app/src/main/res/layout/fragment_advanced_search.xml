@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.advanced_search.AdvancedSearchFragment">
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:contentDescription="@string/todo"
+        android:src="@drawable/ic_left_arrow"
+        app:layout_constraintBottom_toBottomOf="@id/tvAdvancedSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/tvAdvancedSearch" />
+
+    <TextView
+        android:id="@+id/tvAdvancedSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="@string/advanced_search"
+        android:textSize="@dimen/heading3"
+        app:fontFamily="@font/nunito_extrabold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svRecipe"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:background="@drawable/background_edittext"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBack"
+        app:layout_constraintTop_toTopOf="@id/btnBack" />
+
+    <TextView
+        android:id="@+id/tvMenuName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_bold"
+        android:labelFor="@id/etMenuName"
+        android:text="@string/nama_menu"
+        android:textSize="@dimen/heading4"
+        app:layout_constraintStart_toStartOf="@id/btnBack"
+        app:layout_constraintTop_toBottomOf="@id/tvAdvancedSearch" />
+
+    <EditText
+        android:id="@+id/etMenuName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_edittext"
+        android:inputType="text"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvMenuName"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+    <TextView
+        android:id="@+id/tvInclude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/nunito_bold"
+        android:labelFor="@id/etInclude"
+        android:text="@string/cari_bahan"
+        android:textSize="@dimen/heading4"
+        app:layout_constraintStart_toStartOf="@id/tvMenuName"
+        app:layout_constraintTop_toBottomOf="@id/etMenuName" />
+
+    <EditText
+        android:id="@+id/etInclude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_edittext"
+        android:inputType="text"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvInclude"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+    <TextView
+        android:id="@+id/tvExclude"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/nunito_bold"
+        android:labelFor="@id/etExclude"
+        android:text="@string/kecualikan_bahan"
+        android:textSize="@dimen/heading4"
+        app:layout_constraintStart_toStartOf="@id/tvInclude"
+        app:layout_constraintTop_toBottomOf="@id/etInclude" />
+
+    <EditText
+        android:id="@+id/etExclude"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/background_edittext"
+        android:inputType="text"
+        android:padding="16dp"
+        app:layout_constraintTop_toBottomOf="@id/tvExclude"
+        tools:ignore="Autofill,VisualLintTextFieldSize" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tvAdvancedSearch"
+        tools:listitem="@layout/item_recipe" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
