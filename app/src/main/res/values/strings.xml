@@ -140,9 +140,13 @@
     <string name="gender">Gender</string>
     <string name="bb">BB</string>
     <string name="activity">Activity</string>
+    <string name="desc_kumpulan_resep_salad">Resep-resep salad sehat namun tetap nikmat \nuntuk disantap.</string>
+    <string name="nasgor_enak">Nasgor Enak</string>
+    <string name="desc_nasgor_enak">Resep-resep nasi goreng yang enak untuk dicoba \nketika perut kosong.</string>
+    <string name="jumlah_nasgor">3 Resep</string>
+    <string name="status_resep_desc">Lihat Status Resep Yang kamu Kirim</string>
     <string name="status_resep">Status Resep</string>
     <string name="rating">4.5/5</string>
-    <string name="status_resep_desc">Lihat Status Resep Yang kamu Kirim</string>
     <string name="nama_folder">Nama Folder</string>
     <string name="jumlah_resep">Jumlah Resep</string>
 </resources>
