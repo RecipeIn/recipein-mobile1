@@ -148,4 +148,5 @@
     <string name="nama_folder">Nama Folder</string>
     <string name="jumlah_resep">Jumlah Resep</string>
     <string name="fullname">Fullname</string>
+    <string name="masukkan_password_lama_anda">Masukkan password lama anda</string>
 </resources>
