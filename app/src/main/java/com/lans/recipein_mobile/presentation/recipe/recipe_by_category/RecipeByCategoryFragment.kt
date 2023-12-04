@@ -10,7 +10,9 @@ import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentRecipeByCategoryBinding
 import com.lans.recipein_mobile.databinding.FragmentRecipePageBinding
 import com.lans.recipein_mobile.presentation.recipe.recipepage.RecipePageViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RecipeByCategoryFragment : Fragment() {
 
     private lateinit var binding: FragmentRecipeByCategoryBinding
