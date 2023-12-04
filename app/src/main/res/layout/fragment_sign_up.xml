@@ -56,8 +56,8 @@
                 android:labelFor="@id/etUsername"
                 android:text="@string/username"
                 android:textSize="@dimen/heading4"
-                app:layout_constraintStart_toStartOf="@+id/tvSignUpDesc"
-                app:layout_constraintTop_toBottomOf="@+id/tvSignUpDesc" />
+                app:layout_constraintStart_toStartOf="@id/tvSignUpDesc"
+                app:layout_constraintTop_toBottomOf="@id/tvSignUpDesc" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/etUsernameLayout"
