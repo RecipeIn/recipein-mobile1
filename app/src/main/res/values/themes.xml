@@ -34,6 +34,11 @@
         <item name="chipStartPadding">12dp</item>
         <item name="chipEndPadding">12dp</item>
     </style>
+    
+    <style name="SpinnerTheme" parent="">
+        <item name="android:textColor">@color/neutral90</item>
+        <item name="android:fontFamily">@font/nunito_bold</item>
+        <item name="android:textSize">@dimen/body3</item>
 
     <style name="DrawableLarge">
         <item name="android:textSize">10sp</item>

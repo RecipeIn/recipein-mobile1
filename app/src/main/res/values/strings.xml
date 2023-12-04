@@ -67,6 +67,44 @@
     <string name="by">By</string>
     <string name="name">Name</string>
     <string name="_30_menit">30 Menit</string>
+    <string name="donat_kentang">Donat Kentang</string>
+    <string name="resep_oleh_ernawati_diperbarui_pada_17_11_2023">Resep oleh Ernawati | Diperbarui pada 17/11/2023</string>
+    <string name="desc_recipe">Donat kentang adalah sajian lezat berbentuk bulat dengan tekstur lembut, terbuat dari campuran kentang yang lezat dan digoreng hingga keemasan.</string>
+    <string name="rating_count">4.5 (46)</string>
+    <string name="total_review">40 Ulasan</string>
+    <string name="total_image">3 Foto</string>
+    <string name="persiapan_n15_menit">Persiapan \n15 Menit</string>
+    <string name="memasak_n30menit">Memasak \n30Menit</string>
+    <string name="total_n45menit">Total \n45Menit</string>
+    <string name="portion">3 Porsi</string>
+    <string name="bahan_bahan">Bahan-Bahan</string>
+    <string name="langkah_langkah">Langkah-Langkah</string>
+    <string name="steps">1. Letakkan seluruh bahan adonan donat dan tuangkan 150gr air.</string>
+    <string name="nutrisi">Nutrisi</string>
+    <string name="ulasan">Ulasan</string>
+    <string name="peringkat">Peringkat*</string>
+    <string name="ulasan_anda">Ulasan Anda</string>
+    <string name="tambahkan_ulasan">Tambahkan Ulasan</string>
+    <string name="urutkan">Urutkan</string>
+    <string name="lebih_banyak">Lebih Banyak</string>
+    <string name="lezat_dan_cepat">Lezat dan Cepat</string>
+    <string name="roti_bakar_simple">Roti Bakar Simple</string>
+    <string name="tambah_resep">Tambah Resep</string>
+    <string name="foto_5_5">+ Foto (5/5)</string>
+    <string name="nama_resep">Nama Resep</string>
+    <string name="jenis_kategori">Jenis/Kategori</string>
+    <string name="waktu_persiapan">Waktu Persiapan</string>
+    <string name="waktu_memasak">Waktu Memasak</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="sate">Sate</string>
+    <string name="langkah">Langkah</string>
+
+    <string-array name="category_review">
+        <item>Terbaru</item>
+        <item>Tidak Positif</item>
+        <item>Paling Positif</item>
+        <item>Paling Berguna</item>
+    </string-array>
     <string name="nama">Ernawati</string>
     <string name="profile_desc">Salam hangat dari dapur yang penuh aroma dan kehangatan! Saya adalah Ernawati, seorang pecinta masakan yang selalu mencari inspirasi baru untuk menghidangkan kreasi kuliner istimewa.</string>
     <string name="resepku">Resepku</string>
