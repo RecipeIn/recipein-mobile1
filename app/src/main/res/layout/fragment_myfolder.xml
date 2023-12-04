@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".presentation.my_folder.MyFolderFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ivRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="360dp"
+            android:contentDescription="@string/todo"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <ImageView
+            android:id="@+id/btnBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="24dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_left_arrow"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
+
+        <ImageView
+            android:id="@+id/btnFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_love_resep"
+            app:layout_constraintBottom_toBottomOf="@id/btnBack"
+            app:layout_constraintEnd_toStartOf="@id/btnShare"
+            app:layout_constraintTop_toTopOf="@id/btnBack"
+            tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck,TouchTargetSizeCheck" />
+
+        <ImageView
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:contentDescription="@string/todo"
+            android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@id/btnFavorite"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/btnFavorite"
+            tools:ignore="ImageContrastCheck" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/img_gradient"
+            app:layout_constraintBottom_toBottomOf="@id/ivRecipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvRecipeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="170dp"
+            android:fontFamily="@font/nunito_extrabold"
+            android:text="@string/nasgor_enak"
+            android:textColor="@color/white"
+            android:textSize="@dimen/heading3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnBack" />
+
+        <TextView
+            android:id="@+id/tvRecipeDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/desc_nasgor_enak"
+            android:textColor="#E3F2FD"
+            android:textSize="@dimen/body2"
+            app:layout_constraintStart_toStartOf="@id/tvRecipeName"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeName"
+            tools:ignore="TextContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvRecipeTotal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/jumlah_nasgor"
+            android:textColor="@color/white"
+            android:textSize="@dimen/body2"
+            app:layout_constraintStart_toStartOf="@id/tvRecipeDescription"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeDescription" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecipe"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@id/ivRecipe"
+            app:layout_constraintStart_toStartOf="@id/ivRecipe"
+            app:layout_constraintTop_toBottomOf="@id/ivRecipe"
+            tools:listitem="@layout/item_weekly_recommendation" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
