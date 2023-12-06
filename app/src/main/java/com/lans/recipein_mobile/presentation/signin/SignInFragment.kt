@@ -76,8 +76,7 @@ class SignInFragment : Fragment(), OnClickListener {
         viewModel.state.collect { result ->
             (requireActivity() as MainActivity).showLoading(result.isLoading)
 
-            if (result.user != null) {
-                viewModel.saveSession(result.user!!.email)
+            if (result.isLoggedIn) {
                 val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
                 findNavController().navigate(action)
             }

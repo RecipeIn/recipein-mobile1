@@ -6,18 +6,20 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 
 class UserRepository(
-    private val dataStoreManager: DataStoreManager
-): IUserRepository {
+    private val dataStoreManager: DataStoreManager,
+) : IUserRepository {
     override suspend fun isLoggedIn(): Flow<Boolean> {
         return flow {
-            dataStoreManager.email.collect { email ->
-                emit(email.isNotBlank())
+            dataStoreManager.userId.collect { userId ->
+                emit(userId != 0)
             }
         }
     }
 
-    override suspend fun storeEmail(email: String) {
-        dataStoreManager.storeData(DataStoreManager.EMAIL, email)
+    override suspend fun storeSession(userId: Int, accessToken: String, refreshToken: String) {
+        dataStoreManager.storeData(DataStoreManager.USER_ID, userId)
+        dataStoreManager.storeData(DataStoreManager.ACCESS_TOKEN, accessToken)
+        dataStoreManager.storeData(DataStoreManager.REFRESH_TOKEN, refreshToken)
     }
 
     override suspend fun clearEmail() {

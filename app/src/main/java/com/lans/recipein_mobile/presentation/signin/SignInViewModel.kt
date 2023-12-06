@@ -17,18 +17,23 @@ import javax.inject.Inject
 class SignInViewModel @Inject constructor(
     private val signInUseCase: SignInUseCase,
     private val saveSessionUseCase: SaveSessionUseCase,
-    private val validatorUseCase: ValidatorUseCase
+    private val validatorUseCase: ValidatorUseCase,
 ) : ViewModel() {
     private val _state = MutableStateFlow(SignInUIState())
     val state: Flow<SignInUIState> get() = _state
 
-    fun signin(username: String, password: String) {
+    fun signin(email: String, password: String) {
         viewModelScope.launch {
-            signInUseCase.invoke(Auth(username, password)).collect { result ->
+            signInUseCase.invoke(
+                Auth().copy(
+                    email = email,
+                    password = password
+                )
+            ).collect { result ->
                 when (result) {
                     is Resource.Success -> {
-                        saveSessionUseCase.invoke(result.data.email)
-                        _state.value = _state.value.copy(user = result.data)
+                        saveSessionUseCase.invoke(result.data)
+                        _state.value = _state.value.copy(isLoggedIn = true)
                         _state.value = _state.value.copy(isLoading = false)
                     }
 
@@ -57,11 +62,5 @@ class SignInViewModel @Inject constructor(
         val validate = validatorUseCase.password.invoke(password)
         _state.value = _state.value.copy(passwordError = validate.errorMessage)
         return validate.isSuccess
-    }
-
-    fun saveSession(email: String) {
-        viewModelScope.launch {
-            saveSessionUseCase.invoke(email)
-        }
     }
 }
