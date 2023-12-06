@@ -13,7 +13,9 @@ import javax.inject.Inject
 
 class DataStoreManager @Inject constructor(private val context: Context) {
     companion object {
-        val EMAIL = stringPreferencesKey("EMAIL")
+        val USER_ID = intPreferencesKey("USER_ID")
+        val ACCESS_TOKEN = stringPreferencesKey("ACCESS_TOKEN")
+        val REFRESH_TOKEN = stringPreferencesKey("REFRESH_TOKEN")
         private const val DATASTORE = "storeapp"
     }
 
@@ -27,12 +29,22 @@ class DataStoreManager @Inject constructor(private val context: Context) {
 
     suspend fun clear() {
         context.dataStore.edit { preferences ->
-            preferences.remove(EMAIL)
+            preferences.remove(USER_ID)
         }
     }
 
-    val email: Flow<String>
+    val userId: Flow<Int>
         get() = context.dataStore.data.map { preferences ->
-            preferences[EMAIL] ?: ""
+            preferences[USER_ID] ?: 0
+        }
+
+    val accessToken: Flow<String>
+        get() = context.dataStore.data.map { preferences ->
+            preferences[ACCESS_TOKEN] ?: ""
+        }
+
+    val refreshToken: Flow<String>
+        get() = context.dataStore.data.map { preferences ->
+            preferences[REFRESH_TOKEN] ?: ""
         }
 }
