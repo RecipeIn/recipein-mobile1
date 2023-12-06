@@ -6,11 +6,8 @@ import com.lans.recipein_mobile.data.interactor.CheckSessionInteractor
 import com.lans.recipein_mobile.data.interactor.SaveSessionInteractor
 import com.lans.recipein_mobile.data.interactor.SignInInteractor
 import com.lans.recipein_mobile.data.interactor.SignOutInteractor
-import com.lans.recipein_mobile.data.interactor.SignUpInteractor
-import com.lans.recipein_mobile.data.interactor.validator.ValidateConfirmPasswordInteractor
 import com.lans.recipein_mobile.data.interactor.validator.ValidateEmailInteractor
 import com.lans.recipein_mobile.data.interactor.validator.ValidatePasswordInteractor
-import com.lans.recipein_mobile.data.interactor.validator.ValidateUsernameInteractor
 import com.lans.recipein_mobile.data.interactor.validator.ValidatorInteractor
 import com.lans.recipein_mobile.data.repository.AuthRepository
 import com.lans.recipein_mobile.data.repository.UserRepository
@@ -22,11 +19,8 @@ import com.lans.recipein_mobile.domain.usecase.CheckSessionUseCase
 import com.lans.recipein_mobile.domain.usecase.SaveSessionUseCase
 import com.lans.recipein_mobile.domain.usecase.SignInUseCase
 import com.lans.recipein_mobile.domain.usecase.SignOutUseCase
-import com.lans.recipein_mobile.domain.usecase.SignUpUseCase
-import com.lans.recipein_mobile.domain.usecase.validator.ValidateConfirmPasswordUseCase
 import com.lans.recipein_mobile.domain.usecase.validator.ValidateEmailUseCase
 import com.lans.recipein_mobile.domain.usecase.validator.ValidatePasswordUseCase
-import com.lans.recipein_mobile.domain.usecase.validator.ValidateUsernameUseCase
 import com.lans.recipein_mobile.domain.usecase.validator.ValidatorUseCase
 import dagger.Module
 import dagger.Provides
@@ -110,7 +104,7 @@ object AppModule {
     @Singleton
     fun provideValidatorUseCase(
         validateEmailUseCase: ValidateEmailUseCase,
-        validatePasswordUseCase: ValidatePasswordUseCase
+        validatePasswordUseCase: ValidatePasswordUseCase,
     ): ValidatorUseCase {
         return ValidatorInteractor(
             validateEmailUseCase,
