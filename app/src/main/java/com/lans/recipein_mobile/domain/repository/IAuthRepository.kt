@@ -8,4 +8,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface IAuthRepository {
     suspend fun signin(auth: Auth): Flow<Resource<Token>>
+    suspend fun signup(auth: Auth): Flow<Resource<Boolean>>
 }

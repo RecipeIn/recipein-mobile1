@@ -7,12 +7,16 @@ import android.view.View.OnClickListener
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.google.android.material.checkbox.MaterialCheckBox
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputLayout
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentSignUpBinding
+import com.lans.recipein_mobile.presentation.MainActivity
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class SignUpFragment : Fragment(), OnClickListener {
@@ -36,12 +40,33 @@ class SignUpFragment : Fragment(), OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initializeComponent()
+
+        lifecycleScope.launch {
+            observeSignUp()
+        }
     }
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-            R.id.btnSignIn -> {
+            R.id.btnSignUp -> {
+                lifecycleScope.launch {
+                    val username = usernameLayout.editText!!.text
+                    val email = emailLayout.editText!!.text
+                    val password = passwordLayout.editText!!.text
+                    val confirmPassword = confirmPasswordLayout.editText!!.text
 
+                    val isUsernameValid = viewModel.validateUsername(username.toString())
+                    val isEmailValid = viewModel.validateEmail(email.toString())
+                    val isPasswordValid = viewModel.validatePassword(password.toString())
+                    val isConfirmPassword = viewModel.validateConfirmPassword(
+                        password.toString(),
+                        confirmPassword.toString()
+                    )
+
+                    if (isEmailValid && isUsernameValid && isPasswordValid && isConfirmPassword) {
+                        viewModel.signup(email.toString(), username.toString(), password.toString())
+                    }
+                }
             }
 
             R.id.tvSignIn -> {
@@ -59,5 +84,48 @@ class SignUpFragment : Fragment(), OnClickListener {
         cbTerms = binding.cbAccTerms
         binding.btnSignUp.setOnClickListener(this)
         binding.tvSignIn.setOnClickListener(this)
+    }
+
+    private suspend fun observeSignUp() {
+        viewModel.state.collect { result ->
+            (requireActivity() as MainActivity).showLoading(result.isLoading)
+
+            if (result.isSuccess) {
+                val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
+                findNavController().navigate(action)
+            }
+
+            if (result.error.isNotBlank()) {
+                Snackbar.make(
+                    binding.root,
+                    result.error,
+                    Snackbar.LENGTH_SHORT
+                ).show()
+            }
+
+            if (!result.usernameError.isNullOrBlank()) {
+                usernameLayout.error = result.usernameError
+            } else {
+                usernameLayout.error = null
+            }
+
+            if (!result.emailError.isNullOrBlank()) {
+                emailLayout.error = result.emailError
+            } else {
+                emailLayout.error = null
+            }
+
+            if (!result.passwordError.isNullOrBlank()) {
+                passwordLayout.error = result.passwordError
+            } else {
+                passwordLayout.error = null
+            }
+
+            if (!result.confirmPasswordError.isNullOrBlank()) {
+                confirmPasswordLayout.error = result.confirmPasswordError
+            } else {
+                confirmPasswordLayout.error = null
+            }
+        }
     }
 }

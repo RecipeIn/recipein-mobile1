@@ -6,8 +6,11 @@ import com.lans.recipein_mobile.data.interactor.CheckSessionInteractor
 import com.lans.recipein_mobile.data.interactor.SaveSessionInteractor
 import com.lans.recipein_mobile.data.interactor.SignInInteractor
 import com.lans.recipein_mobile.data.interactor.SignOutInteractor
+import com.lans.recipein_mobile.data.interactor.SignUpInteractor
+import com.lans.recipein_mobile.data.interactor.validator.ValidateConfirmPasswordInteractor
 import com.lans.recipein_mobile.data.interactor.validator.ValidateEmailInteractor
 import com.lans.recipein_mobile.data.interactor.validator.ValidatePasswordInteractor
+import com.lans.recipein_mobile.data.interactor.validator.ValidateUsernameInteractor
 import com.lans.recipein_mobile.data.interactor.validator.ValidatorInteractor
 import com.lans.recipein_mobile.data.repository.AuthRepository
 import com.lans.recipein_mobile.data.repository.UserRepository
@@ -19,8 +22,11 @@ import com.lans.recipein_mobile.domain.usecase.CheckSessionUseCase
 import com.lans.recipein_mobile.domain.usecase.SaveSessionUseCase
 import com.lans.recipein_mobile.domain.usecase.SignInUseCase
 import com.lans.recipein_mobile.domain.usecase.SignOutUseCase
+import com.lans.recipein_mobile.domain.usecase.SignUpUseCase
+import com.lans.recipein_mobile.domain.usecase.validator.ValidateConfirmPasswordUseCase
 import com.lans.recipein_mobile.domain.usecase.validator.ValidateEmailUseCase
 import com.lans.recipein_mobile.domain.usecase.validator.ValidatePasswordUseCase
+import com.lans.recipein_mobile.domain.usecase.validator.ValidateUsernameUseCase
 import com.lans.recipein_mobile.domain.usecase.validator.ValidatorUseCase
 import dagger.Module
 import dagger.Provides
@@ -58,6 +64,7 @@ object AppModule {
             .create()
     }
 
+
     @Provides
     @Singleton
     fun provideDataStore(@ApplicationContext context: Context): DataStoreManager {
@@ -84,6 +91,12 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideSignUpUseCase(authRepository: IAuthRepository): SignUpUseCase {
+        return SignUpInteractor(authRepository)
+    }
+
+    @Provides
+    @Singleton
     fun provideCheckSessionUseCase(userRepository: IUserRepository): CheckSessionUseCase {
         return CheckSessionInteractor(userRepository)
     }
@@ -104,11 +117,15 @@ object AppModule {
     @Singleton
     fun provideValidatorUseCase(
         validateEmailUseCase: ValidateEmailUseCase,
+        validateUsernameUseCase: ValidateUsernameUseCase,
         validatePasswordUseCase: ValidatePasswordUseCase,
+        validateConfirmPasswordUseCase: ValidateConfirmPasswordUseCase,
     ): ValidatorUseCase {
         return ValidatorInteractor(
             validateEmailUseCase,
-            validatePasswordUseCase
+            validateUsernameUseCase,
+            validatePasswordUseCase,
+            validateConfirmPasswordUseCase
         )
     }
 
@@ -120,7 +137,19 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideValidateUsernameUseCase(): ValidateUsernameUseCase {
+        return ValidateUsernameInteractor()
+    }
+
+    @Provides
+    @Singleton
     fun provideValidatePasswordUseCase(): ValidatePasswordUseCase {
         return ValidatePasswordInteractor()
+    }
+
+    @Provides
+    @Singleton
+    fun provideValidateConfirmPasswordUseCase(): ValidateConfirmPasswordUseCase {
+        return ValidateConfirmPasswordInteractor()
     }
 }

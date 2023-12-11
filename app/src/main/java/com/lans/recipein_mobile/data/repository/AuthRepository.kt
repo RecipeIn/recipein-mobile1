@@ -4,6 +4,7 @@ import com.lans.recipein_mobile.common.Resource
 import com.lans.recipein_mobile.data.source.network.SafeApiCall
 import com.lans.recipein_mobile.data.source.network.api.RecipeInApi
 import com.lans.recipein_mobile.data.source.network.dto.SignInRequestDto
+import com.lans.recipein_mobile.data.source.network.dto.SignUpRequestDto
 import com.lans.recipein_mobile.data.source.network.dto.toDomain
 import com.lans.recipein_mobile.domain.model.Auth
 import com.lans.recipein_mobile.domain.model.Token
@@ -25,6 +26,22 @@ class AuthRepository @Inject constructor(
                             password = auth.password
                         )
                     ).toDomain()
+                }
+            )
+        }
+    }
+
+    override suspend fun signup(auth: Auth): Flow<Resource<Boolean>> {
+        return flow {
+            emit(
+                safeCall {
+                    api.signup(
+                        SignUpRequestDto(
+                            email = auth.email,
+                            username = auth.username,
+                            password = auth.password
+                        )
+                    ).status == 201
                 }
             )
         }
