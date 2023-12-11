@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentSettingBinding
+import com.lans.recipein_mobile.utils.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -47,7 +48,7 @@ class SettingFragment : Fragment(), OnClickListener {
             R.id.tvLogout -> {
                 viewModel.signOut()
                 val action = SettingFragmentDirections.actionSettingFragmentToSignInFragment()
-                findNavController().navigate(action)
+                findNavController().safeNavigate(action)
             }
         }
     }

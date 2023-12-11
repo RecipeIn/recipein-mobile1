@@ -18,6 +18,7 @@ class AuthRepository @Inject constructor(
 ) : IAuthRepository, SafeApiCall {
     override suspend fun signin(auth: Auth): Flow<Resource<Token>> {
         return flow {
+            emit(Resource.Loading)
             emit(
                 safeCall {
                     api.signin(
@@ -33,6 +34,7 @@ class AuthRepository @Inject constructor(
 
     override suspend fun signup(auth: Auth): Flow<Resource<Boolean>> {
         return flow {
+            emit(Resource.Loading)
             emit(
                 safeCall {
                     api.signup(

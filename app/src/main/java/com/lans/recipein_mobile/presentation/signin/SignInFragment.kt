@@ -14,6 +14,8 @@ import com.google.android.material.textfield.TextInputLayout
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentSignInBinding
 import com.lans.recipein_mobile.presentation.MainActivity
+import com.lans.recipein_mobile.utils.hideKeyboard
+import com.lans.recipein_mobile.utils.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -78,7 +80,8 @@ class SignInFragment : Fragment(), OnClickListener {
 
             if (result.isLoggedIn) {
                 val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
-                findNavController().navigate(action)
+                findNavController().safeNavigate(action)
+                requireActivity().hideKeyboard(binding.root)
             }
 
             if (result.error.isNotBlank()) {
