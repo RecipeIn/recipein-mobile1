@@ -9,6 +9,6 @@ class SaveSessionInteractor @Inject constructor(
     private val userRepository: IUserRepository,
 ) : SaveSessionUseCase {
     override suspend fun invoke(params: Token) {
-        userRepository.storeSession(params.user_id, params.access_token, params.access_token)
+        userRepository.storeSession(params.user_id, params.access_token, params.refresh_token)
     }
 }
