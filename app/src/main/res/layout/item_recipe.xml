@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
+    android:layout_height="170dp"
     tools:ignore="TextSizeCheck">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -41,9 +41,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ic_burger_button"
-            app:layout_constraintEnd_toEndOf="@id/ratingRecipe"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/tvCategory"
             app:tint="@color/neutral90" />
 
@@ -53,6 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito_extrabold"
+            android:maxLength="16"
             android:text="@string/recipe_name"
             android:textSize="@dimen/subheading"
             app:layout_constraintStart_toStartOf="@id/tvCategory"
@@ -60,7 +62,7 @@
 
         <TextView
             android:id="@+id/tvRecipeDesc"
-            android:layout_width="wrap_content"
+            android:layout_width="180dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             android:fontFamily="@font/nunito_regular"
@@ -75,6 +77,7 @@
         <TextView
             android:id="@+id/tvBy"
             android:layout_width="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/tvTime"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/nunito_regular"
@@ -106,6 +109,7 @@
             android:text="@string/_30_menit"
             android:textSize="@dimen/body2"
             app:drawableLeftCompat="@drawable/ic_mini_clock"
+            app:layout_constraintBottom_toTopOf="@id/ratingRecipe"
             app:layout_constraintStart_toStartOf="@id/tvBy"
             app:layout_constraintTop_toBottomOf="@id/tvBy" />
 
@@ -114,15 +118,29 @@
             style="@style/Widget.AppCompat.RatingBar.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
             android:numStars="5"
             android:progressTint="@color/primary50"
             android:rating="4.5"
             android:stepSize="0.5"
-            app:layout_constraintBottom_toBottomOf="@+id/tvTime"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvName" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvRating"
+            app:layout_constraintStart_toStartOf="@id/tvTime"
+            app:layout_constraintTop_toBottomOf="@id/tvTime" />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/rating"
+            android:textSize="@dimen/body3"
+            app:layout_constraintBottom_toBottomOf="@+id/ratingRecipe"
+            app:layout_constraintStart_toEndOf="@id/ratingRecipe"
+            app:layout_constraintTop_toTopOf="@+id/ratingRecipe" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

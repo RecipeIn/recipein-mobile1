@@ -5,7 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:paddingBottom="68dp"
     tools:context=".presentation.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -220,20 +219,6 @@
             app:layout_constraintStart_toStartOf="@id/tvNewRecipe"
             app:layout_constraintTop_toBottomOf="@id/tvNewRecipe"
             tools:listitem="@layout/item_recipe_new" />
-
-        <Button
-            android:id="@+id/btnMore"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:backgroundTint="@color/secondary50"
-            android:fontFamily="@font/nunito_bold"
-            android:text="@string/lebih_banyak"
-            android:textSize="@dimen/body2"
-            app:cornerRadius="8dp"
-            app:layout_constraintEnd_toEndOf="@id/rvNewRecipe"
-            app:layout_constraintStart_toStartOf="@id/rvNewRecipe"
-            app:layout_constraintTop_toBottomOf="@id/rvNewRecipe" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

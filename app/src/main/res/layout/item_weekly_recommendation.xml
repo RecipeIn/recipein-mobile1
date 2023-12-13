@@ -78,37 +78,49 @@
             app:layout_constraintTop_toBottomOf="@+id/tvCategory" />
 
         <TextView
-            android:id="@+id/tvAuthor"
-            android:layout_width="144dp"
+            android:id="@+id/tvBy"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_regular"
-            android:text="@string/by_author"
-            android:textAlignment="textStart"
+            android:text="@string/by"
             android:textSize="@dimen/body3"
-            app:layout_constraintStart_toStartOf="@+id/tvRecipeName"
-            app:layout_constraintTop_toBottomOf="@+id/tvRecipeName" />
+            app:layout_constraintEnd_toStartOf="@id/tvName"
+            app:layout_constraintStart_toStartOf="@id/tvRecipeName"
+            app:layout_constraintTop_toBottomOf="@id/tvRecipeName" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:fontFamily="@font/nunito_bold"
+            android:text="@string/name"
+            android:textSize="@dimen/body3"
+            app:layout_constraintBottom_toBottomOf="@id/tvBy"
+            app:layout_constraintStart_toEndOf="@id/tvBy"
+            app:layout_constraintTop_toTopOf="@id/tvBy" />
 
         <ImageView
             android:id="@+id/imgTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ic_time"
-            app:layout_constraintStart_toStartOf="@+id/tvAuthor"
-            app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
+            app:layout_constraintBottom_toBottomOf="@id/tvTime"
+            app:layout_constraintStart_toStartOf="@id/tvBy"
+            app:layout_constraintTop_toTopOf="@id/tvTime" />
 
         <TextView
             android:id="@+id/tvTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
-            android:layout_marginTop="13dp"
+            android:layout_marginTop="12dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/_30_menit"
             android:textSize="@dimen/body3"
-            app:layout_constraintStart_toEndOf="@+id/imgTime"
-            app:layout_constraintTop_toBottomOf="@+id/tvAuthor" />
+            app:layout_constraintStart_toEndOf="@id/imgTime"
+            app:layout_constraintTop_toBottomOf="@id/tvName" />
 
         <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/ratingRecipe"
@@ -122,8 +134,8 @@
             android:rating="4.5"
             android:stepSize="0.5"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/imgTime"
-            app:layout_constraintTop_toBottomOf="@+id/tvTime" />
+            app:layout_constraintStart_toStartOf="@id/imgTime"
+            app:layout_constraintTop_toBottomOf="@id/tvTime" />
 
         <TextView
             android:id="@+id/tvRating"
@@ -134,8 +146,8 @@
             android:text="@string/rating"
             android:textSize="@dimen/body3"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/ratingRecipe"
-            app:layout_constraintTop_toBottomOf="@+id/tvTime"/>
+            app:layout_constraintStart_toEndOf="@id/ratingRecipe"
+            app:layout_constraintTop_toBottomOf="@id/tvTime" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

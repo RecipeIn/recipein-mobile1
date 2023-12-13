@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".presentation.recipe.recipepage.RecipePageFragment">
+    tools:context=".presentation.recipe.recipe_page.RecipePageFragment">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout

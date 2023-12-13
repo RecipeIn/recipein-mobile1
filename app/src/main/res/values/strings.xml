@@ -153,4 +153,5 @@
     <string name="nama_menu">Nama Menu</string>
     <string name="cari_bahan">Cari Bahan</string>
     <string name="kecualikan_bahan">Kecualikan Bahan</string>
+    <string name="empty">Empty</string>
 </resources>
