@@ -3,6 +3,10 @@ package com.lans.recipein_mobile.di
 import android.content.Context
 import com.lans.recipein_mobile.common.Constants.BASE_URL
 import com.lans.recipein_mobile.data.interactor.CheckSessionInteractor
+import com.lans.recipein_mobile.data.interactor.GetCategoriesInteractor
+import com.lans.recipein_mobile.data.interactor.GetRecipeByCategoryIdInteractor
+import com.lans.recipein_mobile.data.interactor.GetRecipeByCategoryNameInteractor
+import com.lans.recipein_mobile.data.interactor.GetRecipesInteractor
 import com.lans.recipein_mobile.data.interactor.SaveSessionInteractor
 import com.lans.recipein_mobile.data.interactor.SignInInteractor
 import com.lans.recipein_mobile.data.interactor.SignOutInteractor
@@ -13,12 +17,20 @@ import com.lans.recipein_mobile.data.interactor.validator.ValidatePasswordIntera
 import com.lans.recipein_mobile.data.interactor.validator.ValidateUsernameInteractor
 import com.lans.recipein_mobile.data.interactor.validator.ValidatorInteractor
 import com.lans.recipein_mobile.data.repository.AuthRepository
+import com.lans.recipein_mobile.data.repository.CategoryRepository
+import com.lans.recipein_mobile.data.repository.RecipeRepository
 import com.lans.recipein_mobile.data.repository.UserRepository
 import com.lans.recipein_mobile.data.source.local.DataStoreManager
 import com.lans.recipein_mobile.data.source.network.api.RecipeInApi
 import com.lans.recipein_mobile.domain.repository.IAuthRepository
+import com.lans.recipein_mobile.domain.repository.ICategoryRepository
+import com.lans.recipein_mobile.domain.repository.IRecipeRepository
 import com.lans.recipein_mobile.domain.repository.IUserRepository
 import com.lans.recipein_mobile.domain.usecase.CheckSessionUseCase
+import com.lans.recipein_mobile.domain.usecase.GetCategoriesUseCase
+import com.lans.recipein_mobile.domain.usecase.GetRecipeByCategoryIdUseCase
+import com.lans.recipein_mobile.domain.usecase.GetRecipeByCategoryNameUseCase
+import com.lans.recipein_mobile.domain.usecase.GetRecipesUseCase
 import com.lans.recipein_mobile.domain.usecase.SaveSessionUseCase
 import com.lans.recipein_mobile.domain.usecase.SignInUseCase
 import com.lans.recipein_mobile.domain.usecase.SignOutUseCase
@@ -85,6 +97,18 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideCategoryRepository(api: RecipeInApi): ICategoryRepository {
+        return CategoryRepository(api)
+    }
+
+    @Provides
+    @Singleton
+    fun provideRecipeRepository(api: RecipeInApi): IRecipeRepository {
+        return RecipeRepository(api)
+    }
+
+    @Provides
+    @Singleton
     fun provideSignInUseCase(authRepository: IAuthRepository): SignInUseCase {
         return SignInInteractor(authRepository)
     }
@@ -111,6 +135,30 @@ object AppModule {
     @Singleton
     fun provideSignOutUseCase(userRepository: IUserRepository): SignOutUseCase {
         return SignOutInteractor(userRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetCategoriesUseCase(categoryRepository: ICategoryRepository): GetCategoriesUseCase {
+        return GetCategoriesInteractor(categoryRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetRecipesUseCase(recipeRepository: IRecipeRepository, categoryRepository: ICategoryRepository): GetRecipesUseCase {
+        return GetRecipesInteractor(recipeRepository, categoryRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetRecipeByCategoryIdUseCase(recipeRepository: IRecipeRepository): GetRecipeByCategoryIdUseCase {
+        return GetRecipeByCategoryIdInteractor(recipeRepository)
+    }
+
+    @Provides
+    @Singleton
+    fun provideGetRecipeByCategoryNameUseCase(recipeRepository: IRecipeRepository): GetRecipeByCategoryNameUseCase {
+        return GetRecipeByCategoryNameInteractor(recipeRepository)
     }
 
     @Provides
