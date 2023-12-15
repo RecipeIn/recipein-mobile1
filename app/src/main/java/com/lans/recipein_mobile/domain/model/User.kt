@@ -15,5 +15,5 @@ data class User(
     val height: Int,
     val weight: Int,
     val activity: Activity,
-    val avatar: String
+    val avatar: String,
 )

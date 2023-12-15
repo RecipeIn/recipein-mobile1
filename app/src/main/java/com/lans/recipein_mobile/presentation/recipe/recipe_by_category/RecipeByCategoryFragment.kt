@@ -6,10 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentRecipeByCategoryBinding
-import com.lans.recipein_mobile.databinding.FragmentRecipePageBinding
-import com.lans.recipein_mobile.presentation.recipe.recipepage.RecipePageViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

@@ -17,7 +17,7 @@ data class SignInResponseDto(
 )
 
 fun SignInResponseDto.toDomain() = Token(
-    user_id = user_id,
-    access_token = access_token,
-    refresh_token = refresh_token
+    userId = user_id,
+    accessToken = access_token,
+    refreshToken = refresh_token
 )

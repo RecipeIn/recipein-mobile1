@@ -4,10 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.lans.recipein_mobile.databinding.ItemWeeklyRecommendationBinding
-import com.lans.recipein_mobile.domain.model.RecipeRecomendation
+import com.lans.recipein_mobile.domain.model.Recipe
 
 class RecommendationRecipeAdapter(
-    private val list: List<RecipeRecomendation>
+    private val list: List<Recipe>,
 ) : RecyclerView.Adapter<RecommendationRecipeAdapter.ViewHolder>() {
     inner class ViewHolder(val binding: ItemWeeklyRecommendationBinding) :
         RecyclerView.ViewHolder(binding.root)
@@ -18,16 +18,14 @@ class RecommendationRecipeAdapter(
                 LayoutInflater.from(parent.context),
                 parent,
                 false
-            ))
+            )
+        )
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val (image, category, recipeTitle, author, time) = list[position]
-        holder.binding.imgRecipeRecommendation.setImageResource(image)
-        holder.binding.tvCategory.text = category
-        holder.binding.tvRecipeName.text = recipeTitle
-        holder.binding.tvAuthor.text = author
-        holder.binding.tvTime.text = time
+        val recipe = list[position]
+        holder.binding.tvRecipeName.text = recipe.name
+        holder.binding.ratingRecipe.rating = recipe.rating
     }
 
     override fun getItemCount(): Int {

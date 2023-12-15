@@ -31,7 +31,7 @@ interface SafeApiCall {
                         Resource.Error("Failed to connect: Unable to established a connection to the server")
                     }
 
-                    else -> Resource.Error("Something went wrong")
+                    else -> Resource.Error(e.message.toString())
                 }
             }
         }

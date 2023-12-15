@@ -21,9 +21,9 @@ class CategoryAdapter(private val list: List<Category>) :
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val (image, title) = list[position]
-        holder.binding.ivCategory.setImageResource(image)
-        holder.binding.tvCategory.text = title
+        val (_, name, image) = list[position]
+        //holder.binding.ivCategory.load(image)
+        holder.binding.tvCategory.text = name
     }
 
     override fun getItemCount(): Int {

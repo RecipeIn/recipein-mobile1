@@ -29,7 +29,7 @@
     </style>
 
     <style name="RecipeInMobile.Chip.Choice" parent="Widget.MaterialComponents.Chip.Choice">
-        <item name="android:textColor">@color/secondary90</item>
+        <item name="android:textColor">@drawable/chip_text_color</item>
         <item name="chipBackgroundColor">@drawable/background_chip</item>
         <item name="chipStartPadding">12dp</item>
         <item name="chipEndPadding">12dp</item>
