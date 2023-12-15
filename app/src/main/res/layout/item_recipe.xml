@@ -66,7 +66,7 @@
             android:fontFamily="@font/nunito_regular"
             android:maxWidth="200dp"
             android:maxLength="50"
-            android:maxLines="2"
+            android:maxLines="1"
             android:text="@string/description"
             android:textSize="@dimen/body2"
             app:layout_constraintStart_toStartOf="@id/tvRecipeName"

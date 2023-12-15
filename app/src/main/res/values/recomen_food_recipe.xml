@@ -27,4 +27,11 @@
         <item>30 Menit</item>
         <item>30 Menit</item>
     </string-array>
+
+    <string-array name="desc">
+        <item>Salad buah yang cocok untuk dimakan pada saat siang</item>
+        <item>Nasi Goreng Udang yang cocok dimakan pada saat sarapan</item>
+        <item>Soto Betawi dengan daging segar dan juga santan</item>
+        <item>Bakso Daging yang cocok dimakan pada saat siang hari</item>
+    </string-array>
 </resources>

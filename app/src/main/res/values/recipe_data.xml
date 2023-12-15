@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="category_recipe_page">
+        <item>Roti</item>
+        <item>Nasi Goreng</item>
+        <item>Martabak</item>
+        <item>Daging</item>
+    </string-array>
+
+    <string-array name="author_recipe_page">
+        <item>Dapur Amanda</item>
+        <item>Dapur Sasa</item>
+        <item>Dapur Ika</item>
+        <item>Dapur Rere</item>
+    </string-array>
+
+    <string-array name="tittle_recipe_page">
+        <item>Donat Kentang</item>
+        <item>Nasi Goreng Sosis</item>
+        <item>Martabak Telur</item>
+        <item>Rendang</item>
+    </string-array>
+
+    <string-array name="desc_recipe_page">
+        <item>Donat dari kentang yang ditaburi gula salju.</item>
+        <item>Nasi goreng dengan topping sosis dan sayuran sehat.</item>
+        <item>Cita rasa telur, sapi dan daging menari di mulut.</item>
+        <item>Makanan terenak di dunia dari padang.</item>
+    </string-array>
+
+    <string-array name="time_recipe_page">
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+        <item>30 Menit</item>
+    </string-array>
+</resources>
