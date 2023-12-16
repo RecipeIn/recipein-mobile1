@@ -1,0 +1,9 @@
+package com.lans.recipein_mobile.presentation.recipe
+
+import com.lans.recipein_mobile.domain.model.Recipe
+
+data class RecipeUIState(
+    var recipes: List<Recipe> = emptyList(),
+    var error: String = "",
+    var isLoading: Boolean = false,
+)
