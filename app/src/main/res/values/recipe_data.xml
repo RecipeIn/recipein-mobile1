@@ -34,4 +34,70 @@
         <item>30 Menit</item>
         <item>30 Menit</item>
     </string-array>
+
+    <string-array name="steps_recipe_page">
+        <item>1. Letakkan seluruh bahan adonan donat dan tuangkan 150gr air.\n2. Mixer adonan dengan kekuatan sedang dan lakukan selama 5 menit hingga adonan mengkilat dan lembut.\n3. letak adonan dalam nampan dan resting adonan hingga mengembang.\n4. Setelah adonan mengembang cetak sesuai ukuran dan goreng dengan panas minyak sampai dengan 180 C.\n5. Tiriskan donat hingga tidak terlalu berminyak dan haluskan gula.\n6. taburkan gula yang sudah dihaluskan pada sekitar bagian donat lalu sajikan.</item>
+        <item>1. Tumis bawang dan juga cabai.\n2. Tumis sekitar 2 menit lalu masukan nasi.\n3. Tambahkan garam, penyedap rasa, dan juga kecap.\n4. Setelah 5 menit tambahkan sosis.\n5. Makanan siap dihidangkan.</item>
+        <item>1. Aduk semua bahan kulit martabak telur lalu diamkan sampai 30 menit supaya adonan mengembang.\n2. sambil menunggu adonan pecahkan 2 butir telur dan tambahkan daging atau protein yang lainya dan tambahkan daun bawang lalu kocok lepas.\n3. Pipihkan adonan sampai setipis mungkin.\n4. Taruh adonan di wajan dengan minyak yang sudah panas lalu tuangkan campuran telur ke dalam adonan.\n5. Tutup adonan lalu goreng.\n6. Balik martabak lalu tusuk bagian tengah agar matang dengan merata.\n6. Setelahmatang martabak siap dihidangkan.</item>
+        <item>1. Masukan semua bahan bahan yang sudah disiapkan.\n2. Lalu masak daging rendang selama kurang lebih 1 sampai 3 jam, semakin lama semakin bagus dan akan membuat empuk daging nya.</item>
+    </string-array>
+
+
+    <string-array name="ingredients_recipe_1">
+        <item>Tepung Terigu, 100 gr</item>
+        <item>Ragi, 50 gr</item>
+        <item>Gula, 50 gr</item>
+        <item>Telur, 50 gr</item>
+        <item>Mentega, 50 gr</item>
+    </string-array>
+    <string-array name="ingredients_recipe_2">
+        <item>garam, 100 gr</item>
+        <item>telur, 50 gr</item>
+        <item>nasi, 50 gr</item>
+        <item>sosis, 50 gr</item>
+        <item>Mentega, 50 gr</item>
+    </string-array>
+    <string-array name="ingredients_recipe_3">
+        <item>minyak, 100 gr</item>
+        <item>telur, 50 gr</item>
+        <item>tepung, 50 gr</item>
+        <item>daging, 50 gr</item>
+        <item>daun bawang, 50 gr</item>
+    </string-array>
+    <string-array name="ingredients_recipe_4">
+        <item>rempah rempah, 100 gr</item>
+        <item>daging, 50 gr</item>
+        <item>kecap, 50 gr</item>
+        <item>gula aren, 50 gr</item>
+        <item>cabe, 50 gr</item>
+    </string-array>
+    <string-array name="nutrition_recipe_1">
+        <item>Protein, 5 mg</item>
+        <item>Lemak, 15 gr</item>
+        <item>Karbohidrat, 50 gr</item>
+        <item>Serat, 50 gr</item>
+        <item>Vitamin, 50 gr</item>
+    </string-array>
+    <string-array name="nutrition_recipe_2">
+        <item>Karbohidrat, 5 mg</item>
+        <item>Lemak, 15 gr</item>
+        <item>Vit B, 60 gr</item>
+        <item>Serat, 50 gr</item>
+        <item>Vitamin, 50 gr</item>
+    </string-array>
+    <string-array name="nutrition_recipe_3">
+        <item>Protein, 5 mg</item>
+        <item>Lemak, 25 gr</item>
+        <item>Omega 3, 50 gr</item>
+        <item>Serat, 50 gr</item>
+        <item>Vitamin, 50 gr</item>
+    </string-array>
+    <string-array name="nutrition_recipe_4">
+        <item>Protein, 5 mg</item>
+        <item>Lemak, 45 gr</item>
+        <item>Karbohidrat, 50 gr</item>
+        <item>Fosfor, 50 gr</item>
+        <item>Vitamin, 20 gr</item>
+    </string-array>
+
 </resources>

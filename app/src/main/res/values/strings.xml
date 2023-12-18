@@ -11,6 +11,30 @@
     <string name="sign_in_with_google">Sign in with google</string>
     <string name="tidak_punya_akun">Tidak punya akun?</string>
     <string name="daftar">Daftar</string>
+    <string name="donat_kentang">Donat Kentang</string>
+    <string name="resep_oleh_ernawati_diperbarui_pada_17_11_2023">Resep oleh Ernawati | Diperbarui pada 17/11/2023</string>
+    <string name="desc_recipe">Donat kentang adalah sajian lezat berbentuk bulat dengan tekstur lembut, terbuat dari campuran kentang yang lezat dan digoreng hingga keemasan.</string>
+    <string name="rating_count">4.5 (46)</string>
+    <string name="total_review">40 Ulasan</string>
+    <string name="total_image">3 Foto</string>
+    <string name="persiapan_n15_menit">Persiapan \n15 Menit</string>
+    <string name="memasak_n30menit">Memasak \n30Menit</string>
+    <string name="total_n45menit">Total \n45Menit</string>
+    <string name="portion">3 Porsi</string>
+    <string name="bahan_bahan">Bahan-Bahan</string>
+    <string name="langkah_langkah">Langkah-Langkah</string>
+    <string name="steps">1. Letakkan seluruh bahan adonan donat dan tuangkan 150gr air.</string>
+    <string name="ulasan">Ulasan</string>
+    <string name="urutkan">Urutkan</string>
+    <string-array name="category_review">
+        <item>Terbaru</item>
+        <item>Tidak Positif</item>
+        <item>Paling Positif</item>
+        <item>Paling Berguna</item>
+    </string-array>
+    <string name="peringkat">Peringkat*</string>
+    <string name="ulasan_anda">Ulasan Anda</string>
+    <string name="tambahkan_ulasan">Tambahkan Ulasan</string>
     <string name="verifikasi">Verifikasi</string>
     <string name="repeat_verif">Kirim ulang kode verifikasi?</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -102,4 +126,6 @@
     <string name="gender">Gender</string>
     <string name="bb">BB</string>
     <string name="activity">Activity</string>
+    <string name="tepung_terigu">Tepung Terigu</string>
+    <string name="_500_gram">500 gram</string>
 </resources>

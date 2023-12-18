@@ -2,7 +2,8 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/recipePageFragment">
 
     <fragment
         android:id="@+id/getStartedFragment"
@@ -89,6 +90,9 @@
         <action
             android:id="@+id/action_recipeFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/action_recipeFragment_to_recipePageFragment"
+            app:destination="@id/recipePageFragment" />
     </fragment>
     <fragment
         android:id="@+id/settingFragment"
@@ -119,4 +123,13 @@
             android:label="fragment_profile_signout"
             tools:layout="@layout/fragment_profile_signout" />
     </navigation>
+    <fragment
+        android:id="@+id/recipePageFragment"
+        android:name="com.lans.recipein_mobile.presentation.recipe.recipe_page.RecipePageFragment"
+        android:label="fragment_recipe_page"
+        tools:layout="@layout/fragment_recipe_page" >
+        <action
+            android:id="@+id/action_recipePageFragment_to_recipeFragment"
+            app:destination="@id/recipeFragment" />
+    </fragment>
 </navigation>

@@ -124,6 +124,44 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
+        <TextView
+            android:id="@+id/tvSteps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/steps"
+            android:textSize="@dimen/body3"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRecipeName" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvIngredients"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/steps"
+            android:textSize="@dimen/body3"
+            android:visibility="gone"
+            tools:listitem="@layout/list_material"
+            app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRecipeName" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNutrition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_regular"
+            android:text="@string/steps"
+            android:textSize="@dimen/body3"
+            android:visibility="gone"
+            tools:listitem="@layout/list_material"
+            app:layout_constraintEnd_toEndOf="@+id/tvCategory"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRecipeName" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </com.google.android.material.card.MaterialCardView>
