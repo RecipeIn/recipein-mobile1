@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/secondary10"
+    android:padding="16dp">
+
+    <com.google.android.material.checkbox.MaterialCheckBox
+        android:id="@+id/cbCheck"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:minWidth="0dp"
+        android:minHeight="0dp"
+        android:textSize="@dimen/body1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/tvIngredientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/nunito_regular"
+        android:text="@string/ingredient_name"
+        android:textSize="@dimen/body1"
+        app:layout_constraintBottom_toBottomOf="@id/cbCheck"
+        app:layout_constraintStart_toEndOf="@id/cbCheck"
+        app:layout_constraintTop_toTopOf="@id/cbCheck" />
+
+    <TextView
+        android:id="@+id/tvIngredientQty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/nunito_regular"
+        android:text="@string/_500gram"
+        android:textSize="@dimen/body1"
+        app:layout_constraintBottom_toBottomOf="@+id/tvIngredientName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvIngredientName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.recipe.RecipeFragment">
+
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/svRecipe"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_edittext"
+        android:layoutDirection="rtl"
+        app:layout_constraintBottom_toTopOf="@id/tvAdvancedSearch"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvAdvancedSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/nunito_extrabold"
+        android:text="@string/advanced_search"
+        android:textColor="@color/secondary50"
+        android:textSize="@dimen/body2"
+        app:layout_constraintBottom_toTopOf="@id/scrollCategory"
+        app:layout_constraintEnd_toEndOf="@id/svRecipe"
+        app:layout_constraintTop_toBottomOf="@id/svRecipe" />
+
+    <HorizontalScrollView
+        android:id="@+id/scrollCategory"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/scrollRecipe"
+        app:layout_constraintEnd_toEndOf="@+id/svRecipe"
+        app:layout_constraintStart_toStartOf="@+id/svRecipe"
+        app:layout_constraintTop_toBottomOf="@id/tvAdvancedSearch">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cgCategory"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleLine="true"
+            app:singleSelection="true" />
+
+    </HorizontalScrollView>
+
+    <ScrollView
+        android:id="@+id/scrollRecipe"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/svRecipe"
+        app:layout_constraintStart_toStartOf="@id/svRecipe"
+        app:layout_constraintTop_toBottomOf="@id/scrollCategory">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_recipe" />
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
