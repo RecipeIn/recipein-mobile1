@@ -4,6 +4,9 @@ import com.lans.recipein_mobile.domain.model.Category
 import com.lans.recipein_mobile.domain.model.Recipe
 
 data class HomeUIState(
+    var userId: Int = 0,
+    var name: String = "",
+    var favorite: List<Int> = emptyList(),
     var categories: List<Category> = emptyList(),
     var weeklyFoods: List<Recipe> = emptyList(),
     var weeklyDrinks: List<Recipe> = emptyList(),

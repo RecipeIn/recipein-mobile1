@@ -5,5 +5,5 @@ import com.lans.recipein_mobile.domain.model.Recipe
 import kotlinx.coroutines.flow.Flow
 
 interface GetRecipesUseCase {
-    suspend fun invoke(): Flow<Resource<List<Recipe>>>
+    suspend fun invoke(hideSomeCategories: Boolean): Flow<Resource<List<Recipe>>>
 }

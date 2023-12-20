@@ -39,6 +39,7 @@
             android:layout_height="100dp"
             android:layout_marginTop="24dp"
             android:adjustViewBounds="true"
+            android:background="@color/neutral50"
             android:contentDescription="@string/todo"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +74,7 @@
             android:text="@string/lorem_ipsum"
             android:textAlignment="center"
             android:textSize="@dimen/body2"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvName"
@@ -85,9 +87,11 @@
             android:layout_marginHorizontal="24dp"
             android:layout_marginVertical="16dp"
             android:background="@drawable/background_rounded"
-            android:backgroundTint="@color/primary10"
+            android:backgroundTint="@color/secondary50"
+            android:drawableTint="@color/white"
             android:padding="12dp"
             android:text="@string/resepku"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading5"
             app:drawableRightCompat="@drawable/ic_chevron_right"
             app:fontFamily="@font/nunito_bold"
@@ -136,7 +140,7 @@
                 android:background="@drawable/background_rounded"
                 android:backgroundTint="@color/white"
                 android:padding="4dp"
-                android:text="@string/_200_kkal"
+                android:text="@string/_0_kkal"
                 android:textAlignment="center"
                 android:textSize="@dimen/body2"
                 app:layout_constraintBottom_toBottomOf="@id/tvCalorie"
@@ -164,7 +168,7 @@
                 android:background="@drawable/background_rounded"
                 android:backgroundTint="@color/white"
                 android:padding="4dp"
-                android:text="@string/_10g"
+                android:text="@string/_0g"
                 android:textAlignment="center"
                 android:textSize="@dimen/body2"
                 app:layout_constraintBottom_toBottomOf="@id/tvProtein"
@@ -191,7 +195,7 @@
                 android:background="@drawable/background_rounded"
                 android:backgroundTint="@color/white"
                 android:padding="4dp"
-                android:text="@string/_100g"
+                android:text="@string/_0g"
                 android:textAlignment="center"
                 android:textSize="@dimen/body2"
                 app:layout_constraintBottom_toBottomOf="@id/tvCarbohydrate"
@@ -200,11 +204,11 @@
                 app:layout_constraintTop_toTopOf="@id/tvCarbohydrate" />
 
             <TextView
-                android:id="@+id/tvVitamin"
+                android:id="@+id/tvFiber"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/nunito_bold"
-                android:text="@string/vitamin"
+                android:text="@string/serat"
                 android:textSize="@dimen/heading5"
                 app:layout_constraintBottom_toBottomOf="@id/tvCarbohydrateValue"
                 app:layout_constraintEnd_toEndOf="@id/tvProtein"
@@ -213,59 +217,33 @@
                 tools:ignore="TextSizeCheck" />
 
             <TextView
-                android:id="@+id/tvVitaminValue"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:background="@drawable/background_rounded"
-                android:backgroundTint="@color/white"
-                android:padding="4dp"
-                android:text="@string/_10g"
-                android:textAlignment="center"
-                android:textSize="@dimen/body2"
-                app:layout_constraintBottom_toBottomOf="@id/tvVitamin"
-                app:layout_constraintEnd_toEndOf="@id/tvProteinValue"
-                app:layout_constraintStart_toStartOf="@id/tvProteinValue"
-                app:layout_constraintTop_toTopOf="@id/tvVitamin" />
-
-
-            <TextView
-                android:id="@+id/tvFiber"
-                android:layout_width="80dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:fontFamily="@font/nunito_bold"
-                android:text="@string/serat"
-                android:textSize="@dimen/heading5"
-                app:layout_constraintEnd_toEndOf="@id/tvCarbohydrate"
-                app:layout_constraintStart_toStartOf="@id/tvCarbohydrate"
-                app:layout_constraintTop_toBottomOf="@id/tvCarbohydrate" />
-
-            <TextView
                 android:id="@+id/tvFiberValue"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/background_rounded"
                 android:backgroundTint="@color/white"
                 android:padding="4dp"
-                android:text="@string/_100g"
+                android:text="@string/_0g"
                 android:textAlignment="center"
                 android:textSize="@dimen/body2"
                 app:layout_constraintBottom_toBottomOf="@id/tvFiber"
-                app:layout_constraintEnd_toEndOf="@+id/tvCarbohydrateValue"
-                app:layout_constraintStart_toStartOf="@id/tvCarbohydrateValue"
+                app:layout_constraintEnd_toEndOf="@id/tvProteinValue"
+                app:layout_constraintStart_toStartOf="@id/tvProteinValue"
                 app:layout_constraintTop_toTopOf="@id/tvFiber" />
+
 
             <TextView
                 android:id="@+id/tvFat"
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
                 android:fontFamily="@font/nunito_bold"
                 android:text="@string/lemak"
                 android:textSize="@dimen/heading5"
-                app:layout_constraintBottom_toBottomOf="@+id/tvFiberValue"
-                app:layout_constraintEnd_toEndOf="@id/tvVitamin"
-                app:layout_constraintStart_toStartOf="@id/tvVitamin"
-                app:layout_constraintTop_toTopOf="@+id/tvFiberValue" />
+                app:layout_constraintEnd_toEndOf="@+id/tvCarbohydrateValue"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvCarbohydrate" />
 
             <TextView
                 android:id="@+id/tvFatValue"
@@ -274,12 +252,13 @@
                 android:background="@drawable/background_rounded"
                 android:backgroundTint="@color/white"
                 android:padding="4dp"
-                android:text="@string/_10g"
+                android:text="@string/_0g"
                 android:textAlignment="center"
                 android:textSize="@dimen/body2"
                 app:layout_constraintBottom_toBottomOf="@id/tvFat"
-                app:layout_constraintEnd_toEndOf="@id/tvVitaminValue"
-                app:layout_constraintStart_toStartOf="@id/tvVitaminValue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="@+id/tvFiber"
                 app:layout_constraintTop_toTopOf="@id/tvFat" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

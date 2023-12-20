@@ -8,9 +8,15 @@ data class CategoryResponseDto(
     val id: Int,
     @field:Json(name = "name")
     val name: String,
+    @field:Json(name = "image")
+    val image: String,
+    @field:Json(name = "description")
+    val description: String,
 )
 
 fun CategoryResponseDto.toDomain() = Category(
     id = id,
-    name = name
+    name = name,
+    image = image,
+    description = description
 )

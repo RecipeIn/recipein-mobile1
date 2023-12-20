@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -32,6 +33,14 @@ class SettingFragment : Fragment(), OnClickListener {
     }
 
     private fun initializeComponent() {
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            })
+        binding.btnBack.setOnClickListener(this)
         binding.tvMyProfile.setOnClickListener(this)
         binding.tvChangePassword.setOnClickListener(this)
         binding.tvLanguage.setOnClickListener(this)
@@ -45,10 +54,22 @@ class SettingFragment : Fragment(), OnClickListener {
 
     override fun onClick(v: View?) {
         when (v!!.id) {
+            R.id.btnBack -> {
+                findNavController().popBackStack()
+            }
+
+            R.id.tvMyProfile -> {
+                findNavController().popBackStack()
+            }
+
+            R.id.tvChangePassword -> {
+                val action =
+                    SettingFragmentDirections.actionSettingFragmentToChangePasswordFragment()
+                findNavController().safeNavigate(action)
+            }
+
             R.id.tvLogout -> {
                 viewModel.signOut()
-                val action = SettingFragmentDirections.actionSettingFragmentToSignInFragment()
-                findNavController().safeNavigate(action)
             }
         }
     }

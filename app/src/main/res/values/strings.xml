@@ -154,4 +154,10 @@
     <string name="cari_bahan">Cari Bahan</string>
     <string name="kecualikan_bahan">Kecualikan Bahan</string>
     <string name="empty">Empty</string>
+    <string name="ingredient_name">Ingredient Name</string>
+    <string name="_500gram">500gram</string>
+    <string name="instruction">Instruction</string>
+    <string name="_0_kkal">0 Kkal</string>
+    <string name="_0g">0g</string>
+    <string name="_1_porsi">1 porsi</string>
 </resources>

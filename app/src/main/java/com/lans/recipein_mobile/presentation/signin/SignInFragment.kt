@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
@@ -60,17 +61,30 @@ class SignInFragment : Fragment(), OnClickListener {
                 }
             }
 
+            R.id.tvForgotPassword -> {
+                val action = SignInFragmentDirections.actionSignInFragmentToForgotPasswordFragment()
+                findNavController().safeNavigate(action)
+            }
+
             R.id.tvSignUp -> {
                 val action = SignInFragmentDirections.actionSignInFragmentToSignUpFragment()
-                findNavController().navigate(action)
+                findNavController().safeNavigate(action)
             }
         }
     }
 
     private fun initializeComponent() {
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            })
         emailLayout = binding.etEmailLayout
         passwordLayout = binding.etPasswordLayout
         binding.btnSignIn.setOnClickListener(this)
+        binding.tvForgotPassword.setOnClickListener(this)
         binding.tvSignUp.setOnClickListener(this)
     }
 
@@ -79,8 +93,6 @@ class SignInFragment : Fragment(), OnClickListener {
             (requireActivity() as MainActivity).showLoading(result.isLoading)
 
             if (result.isLoggedIn) {
-                val action = SignInFragmentDirections.actionSignInFragmentToHomeFragment()
-                findNavController().safeNavigate(action)
                 requireActivity().hideKeyboard(binding.root)
             }
 
@@ -90,6 +102,7 @@ class SignInFragment : Fragment(), OnClickListener {
                     result.error,
                     Snackbar.LENGTH_SHORT
                 ).show()
+                result.error = ""
             }
 
             if (!result.emailError.isNullOrBlank()) {

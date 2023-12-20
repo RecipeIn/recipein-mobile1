@@ -10,14 +10,22 @@ data class RecipeResponseDto(
     val id: Int,
     @field:Json(name = "user_id")
     val userId: Int,
+    @field:Json(name = "user_username")
+    val username: String,
     @field:Json(name = "category_id")
     val categoryId: Int,
+    @field:Json(name = "category_name")
+    val categoryName: String,
     @field:Json(name = "name")
     val name: String,
     @field:Json(name = "description")
     val description: String,
     @field:Json(name = "rating")
     val rating: Float,
+    @field:Json(name = "preparation_time")
+    val preparationTime: Int,
+    @field:Json(name = "cooking_time")
+    val cookingTime: Int,
     @field:Json(name = "status")
     val status: String,
     @field:Json(name = "image")
@@ -27,10 +35,13 @@ data class RecipeResponseDto(
 fun RecipeResponseDto.toDomain() = Recipe(
     id = id,
     userId = userId,
-    category = Category(categoryId),
+    username = username,
+    category = Category(categoryId, categoryName),
     name = name,
     description = description,
     rating = rating,
+    preparationTime = preparationTime,
+    cookingTime = cookingTime,
     status = RecipeStatus.valueOf(status),
     image = image
 )

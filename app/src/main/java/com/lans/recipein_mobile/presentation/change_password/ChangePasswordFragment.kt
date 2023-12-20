@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.View.OnClickListener
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.textfield.TextInputLayout
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentChangePasswordBinding
@@ -41,6 +43,13 @@ class ChangePasswordFragment : Fragment(), OnClickListener {
     }
 
     private fun initializeComponent() {
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    findNavController().popBackStack()
+                }
+            })
         emailLayout = binding.etEmailLayout
         binding.btnSend.setOnClickListener(this)
     }

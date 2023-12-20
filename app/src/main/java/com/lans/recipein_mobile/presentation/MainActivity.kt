@@ -56,9 +56,11 @@ class MainActivity : AppCompatActivity() {
                     if (result != false) {
                         navGraph.setStartDestination(R.id.homeFragment)
                         controller.graph = navGraph
+                        controller.navigate(R.id.homeFragment)
                     } else {
                         navGraph.setStartDestination(R.id.getStartedFragment)
                         controller.graph = navGraph
+                        controller.navigate(R.id.getStartedFragment)
                     }
 
                     val profileGraph = navGraph.findNode(R.id.navProfile) as NavGraph

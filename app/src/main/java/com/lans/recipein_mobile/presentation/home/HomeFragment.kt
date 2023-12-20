@@ -1,5 +1,6 @@
 package com.lans.recipein_mobile.presentation.home
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -23,6 +25,7 @@ import com.lans.recipein_mobile.presentation.adapter.CategoryAdapter
 import com.lans.recipein_mobile.presentation.adapter.EmptyAdapter
 import com.lans.recipein_mobile.presentation.adapter.RecommendationRecipeAdapter
 import com.lans.recipein_mobile.utils.SpacesItemDecoration
+import com.lans.recipein_mobile.utils.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -36,7 +39,8 @@ class HomeFragment : Fragment() {
     private lateinit var rvCategory: RecyclerView
     private lateinit var rvFoodRecommendation: RecyclerView
     private lateinit var rvDrinkRecommendation: RecyclerView
-    private lateinit var rvRecipeCollection: RecyclerView
+
+    //    private lateinit var rvRecipeCollection: RecyclerView
     private lateinit var rvNewRecipe: RecyclerView
 
     override fun onCreateView(
@@ -69,12 +73,11 @@ class HomeFragment : Fragment() {
         rvDrinkRecommendation.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         rvDrinkRecommendation.addItemDecoration(SpacesItemDecoration(6))
-        rvRecipeCollection = binding.rvCollection
-        rvRecipeCollection.layoutManager =
-            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
-        rvRecipeCollection.addItemDecoration(SpacesItemDecoration(6))
+//        rvRecipeCollection = binding.rvCollection
+//        rvRecipeCollection.layoutManager =
+//            LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+//        rvRecipeCollection.addItemDecoration(SpacesItemDecoration(6))
         rvNewRecipe = binding.rvNewRecipe
-        rvNewRecipe.layoutManager = GridLayoutManager(requireContext(), 2)
         rvNewRecipe.addItemDecoration(SpacesItemDecoration(6))
     }
 
@@ -121,13 +124,27 @@ class HomeFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private suspend fun observe() {
         viewModel.state.collect { result ->
             (requireActivity() as MainActivity).showLoading(result.isLoading)
 
+            if (result.name.isNotBlank()) {
+                binding.tvGreeting.text = "Hai, ${result.name}"
+            }
+
             if (result.categories.isNotEmpty()) {
                 val categories = result.categories
                 val adapter = CategoryAdapter(categories)
+                adapter.setItemClick(object : CategoryAdapter.AdapterListener {
+                    override fun onClick(position: Int) {
+                        val action =
+                            HomeFragmentDirections.actionHomeFragmentToCategoryFragment(
+                                adapter.list[position].id
+                            )
+                        findNavController().safeNavigate(action)
+                    }
+                })
                 rvCategory.adapter = adapter
             } else {
                 rvCategory.adapter = EmptyAdapter()
@@ -135,26 +152,79 @@ class HomeFragment : Fragment() {
 
             if (result.weeklyFoods.isNotEmpty()) {
                 val weeklyFoods = result.weeklyFoods
+                weeklyFoods.map { recipe ->
+                    recipe.isLiked = result.favorite.contains(recipe.id)
+                }
                 val adapter = RecommendationRecipeAdapter(weeklyFoods)
+                adapter.setItemClick(object : RecommendationRecipeAdapter.AdapterListener {
+                    override fun onCardClick(position: Int) {
+                        val action =
+                            HomeFragmentDirections.actionHomeFragmentToRecipePageFragment(
+                                adapter.list[position].id
+                            )
+                        findNavController().safeNavigate(action)
+                    }
+
+                    override fun onFavoriteClick(position: Int) {
+                        viewModel.insertFavorite(adapter.list[position].id)
+                    }
+                })
                 rvFoodRecommendation.adapter = adapter
             } else {
                 rvFoodRecommendation.adapter = EmptyAdapter()
             }
 
             if (result.weeklyDrinks.isNotEmpty()) {
+                val weeklyDrinks = result.weeklyDrinks
+                weeklyDrinks.map { recipe ->
+                    recipe.isLiked = result.favorite.contains(recipe.id)
+                }
+                val adapter = RecommendationRecipeAdapter(weeklyDrinks)
+                adapter.setItemClick(object : RecommendationRecipeAdapter.AdapterListener {
+                    override fun onCardClick(position: Int) {
+                        val action =
+                            HomeFragmentDirections.actionHomeFragmentToRecipePageFragment(
+                                adapter.list[position].id
+                            )
+                        findNavController().safeNavigate(action)
+                    }
 
+                    override fun onFavoriteClick(position: Int) {
+                        viewModel.insertFavorite(adapter.list[position].id)
+                    }
+                })
+                rvDrinkRecommendation.adapter = adapter
             } else {
                 rvDrinkRecommendation.adapter = EmptyAdapter()
             }
 
-            if (result.recipeCollections.isNotEmpty()) {
-
-            } else {
-                rvRecipeCollection.adapter = EmptyAdapter()
-            }
+//            if (result.recipeCollections.isNotEmpty()) {
+//
+//            } else {
+//                rvRecipeCollection.adapter = EmptyAdapter()
+//            }
 
             if (result.newRecipes.isNotEmpty()) {
+                val newRecipes = result.newRecipes.take(4)
+                newRecipes.map { recipe ->
+                    recipe.isLiked = result.favorite.contains(recipe.id)
+                }
+                val adapter = RecommendationRecipeAdapter(newRecipes)
+                adapter.setItemClick(object : RecommendationRecipeAdapter.AdapterListener {
+                    override fun onCardClick(position: Int) {
+                        val action =
+                            HomeFragmentDirections.actionHomeFragmentToRecipePageFragment(
+                                adapter.list[position].id
+                            )
+                        findNavController().safeNavigate(action)
+                    }
 
+                    override fun onFavoriteClick(position: Int) {
+                        viewModel.insertFavorite(adapter.list[position].id)
+                    }
+                })
+                rvNewRecipe.layoutManager = GridLayoutManager(requireContext(), 2)
+                rvNewRecipe.adapter = adapter
             } else {
                 rvNewRecipe.layoutManager =
                     LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
@@ -167,6 +237,7 @@ class HomeFragment : Fragment() {
                     result.error,
                     Snackbar.LENGTH_SHORT
                 ).show()
+                result.error = ""
             }
         }
     }

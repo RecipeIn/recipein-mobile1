@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.lans.recipein_mobile.R
 import com.lans.recipein_mobile.databinding.FragmentGetStartedBinding
+import com.lans.recipein_mobile.utils.safeNavigate
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,12 +35,12 @@ class GetStartedFragment : Fragment(), OnClickListener {
         when (v!!.id) {
             R.id.btnSignIn -> {
                 val action = GetStartedFragmentDirections.actionGetStartedFragmentToSignInFragment()
-                findNavController().navigate(action)
+                findNavController().safeNavigate(action)
             }
 
             R.id.btnContinueGuest -> {
                 val action = GetStartedFragmentDirections.actionGetStartedFragmentToHomeFragment()
-                findNavController().navigate(action)
+                findNavController().safeNavigate(action)
             }
         }
     }

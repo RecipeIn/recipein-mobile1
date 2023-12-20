@@ -7,4 +7,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface ICategoryRepository {
     suspend fun getAll(): Flow<Resource<List<Category>>>
+    suspend fun getByID(categoryId: Int): Flow<Resource<Category?>>
 }

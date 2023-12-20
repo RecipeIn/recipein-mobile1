@@ -24,85 +24,90 @@
             tools:ignore="ImageContrastCheck"
             tools:srcCompat="@tools:sample/avatars" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/btnBack"
-            android:layout_width="62dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="8dp"
-            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/ic_back"
+            android:src="@drawable/ic_left_arrow"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/neutral90"
             tools:ignore="DuplicateSpeakableTextCheck,ImageContrastCheck" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/btnShare"
-            android:layout_width="62dp"
-            android:layout_height="62dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:contentDescription="@string/todo"
             android:src="@drawable/ic_share"
+            app:layout_constraintBottom_toBottomOf="@+id/btnFavorite"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/btnFavorite"
+            app:tint="@color/neutral90"
             tools:ignore="ImageContrastCheck" />
 
-        <ImageButton
+        <ImageView
             android:id="@+id/btnFavorite"
-            android:layout_width="62dp"
-            android:layout_height="62dp"
-            android:background="?android:attr/selectableItemBackground"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:contentDescription="@string/todo"
-            android:src="@drawable/ic_love_recipe"
+            android:src="@drawable/ic_love"
+            app:layout_constraintBottom_toBottomOf="@+id/btnBack"
             app:layout_constraintEnd_toStartOf="@+id/btnShare"
-            app:layout_constraintTop_toTopOf="@+id/btnShare" />
+            app:layout_constraintTop_toTopOf="@+id/btnBack"
+            tools:ignore="ImageContrastCheck" />
 
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="155dp"
             android:background="@drawable/gradient_view"
             app:layout_constraintBottom_toBottomOf="@+id/ivRecipePage"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/tvTittleRecipePage"
+            android:id="@+id/tvTitleRecipePage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
-            android:layout_marginTop="110dp"
             android:fontFamily="@font/nunito_extrabold"
             android:text="@string/donat_kentang"
+            android:textColor="@color/white"
             android:textSize="@dimen/heading3"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+            app:layout_constraintStart_toStartOf="@+id/btnBack"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvAuthorRecipePage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/resep_oleh_ernawati_diperbarui_pada_17_11_2023"
+            android:textColor="@color/white"
             android:textSize="@dimen/body2"
-            app:layout_constraintStart_toStartOf="@+id/tvTittleRecipePage"
-            app:layout_constraintTop_toBottomOf="@+id/tvTittleRecipePage" />
+            app:layout_constraintStart_toStartOf="@+id/tvTitleRecipePage"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitleRecipePage"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvDescRecipePage"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
+            android:layout_marginTop="6dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/desc_recipe"
+            android:textColor="@color/white"
             android:textSize="@dimen/body2"
-            app:layout_constraintEnd_toEndOf="@+id/tvAuthorRecipePage"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/tvAuthorRecipePage"
-            app:layout_constraintTop_toBottomOf="@+id/tvAuthorRecipePage" />
+            app:layout_constraintStart_toStartOf="@+id/tvTitleRecipePage"
+            app:layout_constraintTop_toBottomOf="@+id/tvAuthorRecipePage"
+            tools:ignore="TextSizeCheck,TextContrastCheck" />
 
         <androidx.appcompat.widget.AppCompatRatingBar
             android:id="@+id/rbRecipePage"
@@ -124,9 +129,11 @@
             android:layout_marginStart="4dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/rating_count"
+            android:textColor="@color/white"
             android:textSize="@dimen/body3"
             app:layout_constraintStart_toEndOf="@+id/rbRecipePage"
-            app:layout_constraintTop_toTopOf="@+id/rbRecipePage" />
+            app:layout_constraintTop_toTopOf="@+id/rbRecipePage"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvTotalReview"
@@ -135,9 +142,12 @@
             android:layout_marginStart="4dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/total_review"
+            android:textColor="@color/white"
             android:textSize="@dimen/body3"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/tvRatingCount"
-            app:layout_constraintTop_toTopOf="@+id/tvRatingCount" />
+            app:layout_constraintTop_toTopOf="@+id/tvRatingCount"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/textView"
@@ -146,9 +156,12 @@
             android:layout_marginStart="4dp"
             android:fontFamily="@font/nunito_regular"
             android:text="@string/total_image"
+            android:textColor="@color/white"
             android:textSize="@dimen/body3"
+            android:visibility="gone"
             app:layout_constraintStart_toEndOf="@+id/tvTotalReview"
-            app:layout_constraintTop_toTopOf="@+id/tvTotalReview" />
+            app:layout_constraintTop_toTopOf="@+id/tvTotalReview"
+            tools:ignore="TextContrastCheck" />
 
         <TextView
             android:id="@+id/tvTimePreparation"
@@ -157,6 +170,7 @@
             android:layout_marginTop="15dp"
             android:background="@drawable/shape_rounded"
             android:backgroundTint="@color/primary50"
+            android:gravity="center"
             android:text="@string/persiapan_n15_menit"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="@+id/rbRecipePage"
@@ -167,11 +181,13 @@
             android:id="@+id/tvTimeCooking"
             android:layout_width="90dp"
             android:layout_height="39dp"
-            android:layout_marginStart="40dp"
             android:background="@drawable/shape_rounded"
             android:backgroundTint="@color/primary50"
+            android:gravity="center"
             android:text="@string/memasak_n30menit"
             android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTimePreparation"
+            app:layout_constraintEnd_toStartOf="@+id/tvTimeTotal"
             app:layout_constraintStart_toEndOf="@+id/tvTimePreparation"
             app:layout_constraintTop_toTopOf="@+id/tvTimePreparation"
             tools:ignore="TextSizeCheck" />
@@ -180,13 +196,13 @@
             android:id="@+id/tvTimeTotal"
             android:layout_width="90dp"
             android:layout_height="39dp"
-            android:layout_marginStart="35dp"
+            android:layout_marginEnd="25dp"
             android:background="@drawable/shape_rounded"
             android:backgroundTint="@color/primary50"
+            android:gravity="center"
             android:text="@string/total_n45menit"
             android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="@+id/tvDescRecipePage"
-            app:layout_constraintStart_toEndOf="@+id/tvTimeCooking"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/tvTimeCooking"
             tools:ignore="TextSizeCheck" />
 
@@ -208,12 +224,12 @@
             android:id="@+id/tvTotalPortion"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="23dp"
             android:layout_marginTop="5dp"
             android:fontFamily="@font/nunito_regular"
-            android:text="@string/portion"
+            android:text="@string/_1_porsi"
             android:textSize="@dimen/body3"
-            app:layout_constraintStart_toEndOf="@+id/btnPreviousPortion"
+            app:layout_constraintEnd_toEndOf="@+id/tvTimeCooking"
+            app:layout_constraintStart_toStartOf="@+id/tvTimeCooking"
             app:layout_constraintTop_toTopOf="@+id/btnPreviousPortion" />
 
         <ImageButton
@@ -226,6 +242,7 @@
             android:scaleType="fitCenter"
             android:scaleX="-1"
             android:src="@drawable/ic_back"
+            app:layout_constraintEnd_toStartOf="@+id/tvTimeTotal"
             app:layout_constraintStart_toEndOf="@+id/tvTotalPortion"
             app:layout_constraintTop_toTopOf="@+id/btnPreviousPortion"
             app:tint="@color/secondary50"
@@ -244,7 +261,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvIngredients"
-            android:layout_width="340dp"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             app:layout_constraintEnd_toEndOf="@+id/tvTimeTotal"
@@ -255,16 +272,16 @@
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="24dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/nunito_bold"
             android:text="@string/langkah_langkah"
             android:textSize="@dimen/heading5"
             app:layout_constraintStart_toStartOf="@+id/rvIngredients"
             app:layout_constraintTop_toBottomOf="@+id/rvIngredients" />
 
-        <TextView
-            android:id="@+id/tvSteps"
-            android:layout_width="340dp"
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvInstructions"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_regular"
@@ -283,15 +300,15 @@
             android:fontFamily="@font/nunito_bold"
             android:text="@string/nutrisi"
             android:textSize="@dimen/heading5"
-            app:layout_constraintStart_toStartOf="@+id/tvSteps"
-            app:layout_constraintTop_toBottomOf="@+id/tvSteps" />
+            app:layout_constraintStart_toStartOf="@+id/rvInstructions"
+            app:layout_constraintTop_toBottomOf="@+id/rvInstructions" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvNutrition"
-            android:layout_width="340dp"
+            android:id="@+id/rvNutrisions"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginTop="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/tvSteps"
+            app:layout_constraintEnd_toEndOf="@+id/rvInstructions"
             app:layout_constraintStart_toStartOf="@+id/textView4"
             app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
@@ -303,31 +320,28 @@
             android:fontFamily="@font/nunito_regular"
             android:text="@string/ulasan"
             android:textSize="@dimen/body2"
-            app:layout_constraintStart_toStartOf="@+id/rvNutrition"
-            app:layout_constraintTop_toBottomOf="@+id/rvNutrition" />
-
+            app:layout_constraintStart_toStartOf="@+id/rvNutrisions"
+            app:layout_constraintTop_toBottomOf="@+id/rvNutrisions" />
 
         <View
             android:id="@+id/viewLine"
-            android:layout_width="340dp"
+            android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/black"
-            app:layout_constraintEnd_toEndOf="@+id/rvNutrition"
-            app:layout_constraintStart_toStartOf="@+id/rvNutrition"
+            app:layout_constraintEnd_toEndOf="@+id/rvNutrisions"
+            app:layout_constraintStart_toStartOf="@+id/rvNutrisions"
             app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cardReview"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="25dp"
             android:layout_marginTop="10dp"
-            android:layout_marginEnd="40dp"
             android:backgroundTint="@color/secondary50"
             android:elevation="10dp"
             app:cardCornerRadius="12dp"
             app:layout_constraintEnd_toEndOf="@+id/viewLine"
-            app:layout_constraintStart_toStartOf="@+id/viewLine"
+            app:layout_constraintStart_toStartOf="@+id/textView5"
             app:layout_constraintTop_toBottomOf="@+id/textView5">
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -449,21 +463,6 @@
             app:layout_constraintEnd_toEndOf="@+id/cardReview"
             app:layout_constraintStart_toStartOf="@+id/textView6"
             app:layout_constraintTop_toBottomOf="@+id/textView6" />
-
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/btnMoreReview"
-            android:layout_width="150dp"
-            android:layout_height="44dp"
-            android:layout_marginTop="24dp"
-            android:fontFamily="@font/nunito_regular"
-            android:text="@string/lebih_banyak"
-            android:textColor="@color/white"
-            android:backgroundTint="@color/secondary50"
-            android:textSize="@dimen/body2"
-            app:cornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="@+id/recyclerView"
-            app:layout_constraintStart_toStartOf="@+id/recyclerView"
-            app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

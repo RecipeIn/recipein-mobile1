@@ -56,6 +56,7 @@ class SignUpFragment : Fragment(), OnClickListener {
                     val email = emailLayout.editText!!.text
                     val password = passwordLayout.editText!!.text
                     val confirmPassword = confirmPasswordLayout.editText!!.text
+                    val cbAccTerms = binding.cbAccTerms
 
                     val isUsernameValid = viewModel.validateUsername(username.toString())
                     val isEmailValid = viewModel.validateEmail(email.toString())
@@ -66,6 +67,14 @@ class SignUpFragment : Fragment(), OnClickListener {
                     )
 
                     if (isEmailValid && isUsernameValid && isPasswordValid && isConfirmPassword) {
+                        if (!cbAccTerms.isChecked) {
+                            Snackbar.make(
+                                binding.root,
+                                "You must agree to the Terms and Conditions before proceeding.",
+                                Snackbar.LENGTH_SHORT
+                            ).show()
+                            return@launch
+                        }
                         viewModel.signup(email.toString(), username.toString(), password.toString())
                     }
                 }
@@ -73,7 +82,7 @@ class SignUpFragment : Fragment(), OnClickListener {
 
             R.id.tvSignIn -> {
                 val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
-                findNavController().navigate(action)
+                findNavController().safeNavigate(action)
             }
         }
     }
@@ -96,6 +105,11 @@ class SignUpFragment : Fragment(), OnClickListener {
                 val action = SignUpFragmentDirections.actionSignUpFragmentToSignInFragment()
                 findNavController().safeNavigate(action)
                 requireActivity().hideKeyboard(binding.root)
+                Snackbar.make(
+                    binding.root,
+                    "Your account created successfully",
+                    Snackbar.LENGTH_SHORT
+                ).show()
             }
 
             if (result.error.isNotBlank()) {
@@ -104,6 +118,7 @@ class SignUpFragment : Fragment(), OnClickListener {
                     result.error,
                     Snackbar.LENGTH_SHORT
                 ).show()
+                result.error = ""
             }
 
             if (!result.usernameError.isNullOrBlank()) {
