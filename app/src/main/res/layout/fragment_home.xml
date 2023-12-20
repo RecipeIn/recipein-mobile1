@@ -73,68 +73,68 @@
             app:layout_constraintTop_toBottomOf="@id/tvCategory"
             tools:listitem="@layout/item_category" />
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cardHealthyMenu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="24dp"
-            android:backgroundTint="@color/primary30"
-            android:elevation="10dp"
-            app:cardCornerRadius="12dp"
-            app:layout_constraintEnd_toEndOf="@id/rvCategory"
-            app:layout_constraintStart_toStartOf="@id/rvCategory"
-            app:layout_constraintTop_toBottomOf="@id/rvCategory">
+        <!--        <androidx.cardview.widget.CardView-->
+        <!--            android:id="@+id/cardHealthyMenu"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_marginStart="24dp"-->
+        <!--            android:layout_marginTop="12dp"-->
+        <!--            android:layout_marginEnd="24dp"-->
+        <!--            android:backgroundTint="@color/primary30"-->
+        <!--            android:elevation="10dp"-->
+        <!--            app:cardCornerRadius="12dp"-->
+        <!--            app:layout_constraintEnd_toEndOf="@id/rvCategory"-->
+        <!--            app:layout_constraintStart_toStartOf="@id/rvCategory"-->
+        <!--            app:layout_constraintTop_toBottomOf="@id/rvCategory">-->
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+        <!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content">-->
 
-                <ImageView
-                    android:id="@+id/ivHealthyMenu"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-                    android:layout_marginStart="8dp"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/logo_recipein"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/ivHealthyMenu"-->
+        <!--                    android:layout_width="60dp"-->
+        <!--                    android:layout_height="60dp"-->
+        <!--                    android:layout_marginStart="8dp"-->
+        <!--                    android:contentDescription="@string/todo"-->
+        <!--                    android:src="@drawable/logo_recipein"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                    app:layout_constraintStart_toStartOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
-                <TextView
-                    android:id="@+id/tvHealthyMenu"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_marginStart="24dp"
-                    android:fontFamily="@font/nunito_bold"
-                    android:text="@string/menu_sehat"
-                    android:textSize="@dimen/heading4"
-                    app:layout_constraintStart_toEndOf="@id/ivHealthyMenu"
-                    app:layout_constraintTop_toTopOf="@id/ivHealthyMenu" />
+        <!--                <TextView-->
+        <!--                    android:id="@+id/tvHealthyMenu"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="match_parent"-->
+        <!--                    android:layout_marginStart="24dp"-->
+        <!--                    android:fontFamily="@font/nunito_bold"-->
+        <!--                    android:text="@string/menu_sehat"-->
+        <!--                    android:textSize="@dimen/heading4"-->
+        <!--                    app:layout_constraintStart_toEndOf="@id/ivHealthyMenu"-->
+        <!--                    app:layout_constraintTop_toTopOf="@id/ivHealthyMenu" />-->
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:fontFamily="@font/nunito_regular"
-                    android:text="@string/rekomendasi_menu_sehat_dan_enak"
-                    android:textSize="@dimen/body3"
-                    app:layout_constraintStart_toStartOf="@id/tvHealthyMenu"
-                    app:layout_constraintTop_toBottomOf="@id/tvHealthyMenu" />
+        <!--                <TextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="match_parent"-->
+        <!--                    android:fontFamily="@font/nunito_regular"-->
+        <!--                    android:text="@string/rekomendasi_menu_sehat_dan_enak"-->
+        <!--                    android:textSize="@dimen/body3"-->
+        <!--                    app:layout_constraintStart_toStartOf="@id/tvHealthyMenu"-->
+        <!--                    app:layout_constraintTop_toBottomOf="@id/tvHealthyMenu" />-->
 
-                <ImageView
-                    android:id="@+id/ivHealthyMenuIllustration"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:contentDescription="@string/todo"
-                    android:src="@drawable/img_card_view_home"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+        <!--                <ImageView-->
+        <!--                    android:id="@+id/ivHealthyMenuIllustration"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:contentDescription="@string/todo"-->
+        <!--                    android:src="@drawable/img_card_view_home"-->
+        <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+        <!--                    app:layout_constraintEnd_toEndOf="parent"-->
+        <!--                    app:layout_constraintTop_toTopOf="parent" />-->
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
 
-        </androidx.cardview.widget.CardView>
+        <!--        </androidx.cardview.widget.CardView>-->
 
         <TextView
             android:id="@+id/tvRecommendationFood"
@@ -144,16 +144,16 @@
             android:fontFamily="@font/nunito_bold"
             android:text="@string/rekomendasi_makanan_mingguan"
             android:textSize="@dimen/subheading"
-            app:layout_constraintStart_toStartOf="@id/cardHealthyMenu"
-            app:layout_constraintTop_toBottomOf="@id/cardHealthyMenu" />
+            app:layout_constraintStart_toStartOf="@id/rvCategory"
+            app:layout_constraintTop_toBottomOf="@id/rvCategory" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvFoodRecommendation"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@id/cardHealthyMenu"
-            app:layout_constraintStart_toStartOf="@id/cardHealthyMenu"
+            app:layout_constraintEnd_toEndOf="@id/rvCategory"
+            app:layout_constraintStart_toStartOf="@id/rvCategory"
             app:layout_constraintTop_toBottomOf="@id/tvRecommendationFood"
             tools:listitem="@layout/item_weekly_recommendation" />
 
@@ -173,7 +173,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@id/cardHealthyMenu"
+            app:layout_constraintEnd_toEndOf="@id/rvCategory"
             app:layout_constraintStart_toStartOf="@id/tvRecommendationDrink"
             app:layout_constraintTop_toBottomOf="@id/tvRecommendationDrink"
             tools:listitem="@layout/item_weekly_recommendation" />
@@ -217,7 +217,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            app:layout_constraintEnd_toEndOf="@id/cardHealthyMenu"
+            app:layout_constraintEnd_toEndOf="@id/rvCategory"
             app:layout_constraintStart_toStartOf="@id/tvNewRecipe"
             app:layout_constraintTop_toBottomOf="@id/tvNewRecipe"
             tools:listitem="@layout/item_recipe_new" />
