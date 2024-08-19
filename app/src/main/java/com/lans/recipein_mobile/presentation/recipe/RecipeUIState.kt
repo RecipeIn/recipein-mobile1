@@ -4,6 +4,7 @@ import com.lans.recipein_mobile.domain.model.Category
 import com.lans.recipein_mobile.domain.model.Recipe
 
 data class RecipeUIState(
+    var userId: Int = 0,
     var recipes: List<Recipe> = emptyList(),
     var categories: List<Category> = emptyList(),
     var error: String = "",

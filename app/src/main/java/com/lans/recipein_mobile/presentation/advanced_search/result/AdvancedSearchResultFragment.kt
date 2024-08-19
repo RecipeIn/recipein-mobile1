@@ -125,7 +125,6 @@ class AdvancedSearchResultFragment : Fragment(), OnClickListener {
                 }
 
                 excludeIngredients.forEach { ingredient ->
-                    binding.cgSearch.removeAllViews()
                     val chip = Chip(requireActivity())
                     chip.text = ingredient
                     chip.setTextColor(R.color.white)

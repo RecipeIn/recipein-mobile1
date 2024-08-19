@@ -12,11 +12,14 @@ data class CategoryResponseDto(
     val image: String,
     @field:Json(name = "description")
     val description: String,
+    @field:Json(name = "image_background")
+    val imageBackground: String,
 )
 
 fun CategoryResponseDto.toDomain() = Category(
     id = id,
     name = name,
     image = image,
-    description = description
+    description = description,
+    imageBackground = imageBackground
 )

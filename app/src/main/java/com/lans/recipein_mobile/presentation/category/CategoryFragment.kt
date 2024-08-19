@@ -72,8 +72,8 @@ class CategoryFragment : Fragment(), OnClickListener {
 
             val category = result.category
             if (category != null) {
-                if (category.image != null) {
-                    binding.ivCategory.load(category.image)
+                if (category.imageBackground != null) {
+                    binding.ivCategory.load(category.imageBackground)
                 } else {
                     binding.ivCategory.load(R.drawable.img_background1)
                 }

@@ -87,7 +87,7 @@ class FavoriteFragment : Fragment() {
                     favoriteData = result.recipes.filter { recipe ->
                         recipe.id in result.favorite
                     }
-                    favoriteAdapter = FavoriteAdapter(favoriteData)
+                        favoriteAdapter = FavoriteAdapter(favoriteData)
                     favoriteAdapter.setItemClick(object : FavoriteAdapter.AdapterListener {
                         override fun onClick(position: Int) {
                             val action =

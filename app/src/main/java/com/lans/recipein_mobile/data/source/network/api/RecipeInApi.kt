@@ -26,7 +26,7 @@ import retrofit2.http.Path
 interface RecipeInApi {
     @POST("login")
     suspend fun signin(
-        @Body requestBody: SignInRequestDto,
+        requestBody: SignInRequestDto,
     ): SignInResponseDto
 
     @POST("signup")

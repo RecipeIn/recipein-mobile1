@@ -118,8 +118,14 @@ class RecipeFragment : Fragment(), OnClickListener {
                     override fun onOptionClick(position: Int) {
                         val builder: AlertDialog.Builder = AlertDialog.Builder(requireActivity())
                         builder.setTitle(recipeData[position].name)
-                            .setItems(arrayOf("Favorite", "Share")) { dialog, which ->
-
+                            .setItems(
+                                arrayOf("Favorite", "Share")
+                            ) { _, which ->
+                                when (which) {
+                                    0 -> {
+                                        viewModel.insertFavorite(recipeAdapter.list[position].id)
+                                    }
+                                }
                             }
                         val dialog: AlertDialog = builder.create()
                         dialog.show()
